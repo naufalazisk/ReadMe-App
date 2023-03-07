@@ -1,0 +1,25 @@
+          
+              SizedBox(
+                height: 180,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                    Poster(image: aot),
+                  ],
+                ),
+              ),
+            ],
+          ),

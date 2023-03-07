@@ -111,7 +111,7 @@ class _signUpState extends State<signUp> {
                   offset: Offset(0, 2),
                 )
               ]),
-          height: 60,
+          height: 50,
           child: TextField(
             obscureText: true,
             style: TextStyle(color: Colors.black87),

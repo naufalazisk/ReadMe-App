@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_kelompok_mobile/pages/signIn.dart';
 
 class signUp extends StatefulWidget {
   @override
@@ -174,16 +175,32 @@ class _signUpState extends State<signUp> {
   Widget buildSignUpBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
-      width: double.infinity,
+      width: 505,
+      height: 125,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: ElevatedButton(
-          onPressed: () => print('Sign Up Pressed'),
+          onPressed: () {
+            Navigator.of(context).push(
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    signIn(),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 700),
+              ),
+            );
+          },
           child: Text('Sign Up'),
           style: ElevatedButton.styleFrom(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(10),
             ),
             primary: Colors.white,
             onPrimary: Color(0xffD6C9C9),

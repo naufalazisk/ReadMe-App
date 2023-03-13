@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_kelompok_mobile/pages/signUp.dart';
+import 'package:project_kelompok_mobile/pages/home.dart';
 
 class signIn extends StatefulWidget {
   @override
@@ -150,6 +151,19 @@ class _signInState extends State<signIn> {
         child: ElevatedButton(
           onPressed: () {
             print('Login Pressed');
+            Navigator.of(context).push(
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) => home(),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 700),
+              ),
+            );
           },
           child: Text('LOGIN'),
           style: ElevatedButton.styleFrom(

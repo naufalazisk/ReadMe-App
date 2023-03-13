@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
-class Home extends StatelessWidget {
+class home extends StatelessWidget {
   var faker = Faker();
 
-  Home({super.key});
+  home({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

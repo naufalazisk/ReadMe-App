@@ -21,7 +21,7 @@ class home extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                padding: EdgeInsets.fromLTRB(0, 12, 0, 10),
                 child: Text("Home",
                     style: TextStyle(
                         color: Colors.black,
@@ -43,7 +43,7 @@ class home extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Color.fromARGB(255, 220, 182, 195),
+        selectedItemColor: Colors.pink,
         unselectedItemColor: Colors.black12,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
@@ -52,19 +52,19 @@ class home extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.assignment),
-            label: 'Menu',
+            label: 'Write',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.book),
-            label: 'Reward',
+            label: 'Library',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
-            label: 'Home',
+            label: 'Search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notification_add),
-            label: 'Home',
+            label: 'Notification',
           ),
         ],
         currentIndex: 0,
@@ -153,7 +153,7 @@ class home extends StatelessWidget {
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
                                                 child: Text(
-                                                  "Kategorii",
+                                                  "Drama",
                                                   style: TextStyle(
                                                     fontFamily: "Montserrat",
                                                     fontSize: 14,
@@ -171,7 +171,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Adventure'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -193,7 +193,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Romance'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -205,7 +205,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Thriller'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -227,7 +227,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Slice of Life'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -239,7 +239,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Comedy'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -261,7 +261,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Horror'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),
@@ -273,7 +273,7 @@ class home extends StatelessWidget {
                                             child: Card(
                                               child: Padding(
                                                 padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                                child: Text('Sci-fi'),
                                               ),
                                               color: Color.fromARGB(
                                                   255, 230, 214, 220),

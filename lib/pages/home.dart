@@ -64,7 +64,7 @@ class home extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.notification_add),
-            label: 'Notification',
+            label: 'Home',
           ),
         ],
         currentIndex: 0,

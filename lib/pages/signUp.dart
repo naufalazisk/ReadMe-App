@@ -15,14 +15,17 @@ class _signUpState extends State<signUp> {
         Text(
           'Name',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Montserrat"),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -33,7 +36,7 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
@@ -56,14 +59,17 @@ class _signUpState extends State<signUp> {
         Text(
           'Email',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Montserrat"),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -74,7 +80,7 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             keyboardType: TextInputType.emailAddress,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
@@ -83,7 +89,8 @@ class _signUpState extends State<signUp> {
                   color: Color(0xff0D6C9C9),
                 ),
                 hintText: 'Email',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle:
+                    TextStyle(color: Colors.black38, fontFamily: "Montserrat")),
           ),
         )
       ],
@@ -97,14 +104,17 @@ class _signUpState extends State<signUp> {
         Text(
           'Password',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Montserrat"),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -115,7 +125,7 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             obscureText: true,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
@@ -124,7 +134,8 @@ class _signUpState extends State<signUp> {
                   color: Color(0xff0D6C9C9),
                 ),
                 hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle:
+                    TextStyle(color: Colors.black38, fontFamily: "Montserrat")),
           ),
         )
       ],
@@ -138,14 +149,17 @@ class _signUpState extends State<signUp> {
         Text(
           'Confirm Password',
           style: TextStyle(
-              color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Montserrat"),
         ),
         SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black26,
@@ -156,7 +170,7 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             obscureText: true,
-            style: TextStyle(color: Colors.black87),
+            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
@@ -165,7 +179,8 @@ class _signUpState extends State<signUp> {
                   color: Color(0xff0D6C9C9),
                 ),
                 hintText: 'Enter Your Password Again',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle:
+                    TextStyle(color: Colors.black38, fontFamily: "Montserrat")),
           ),
         )
       ],
@@ -175,10 +190,9 @@ class _signUpState extends State<signUp> {
   Widget buildSignUpBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
-      width: 505,
-      height: 125,
+      width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.all(15),
+        padding: EdgeInsets.all(5),
         child: ElevatedButton(
           onPressed: () {
             Navigator.of(context).push(
@@ -200,13 +214,14 @@ class _signUpState extends State<signUp> {
           style: ElevatedButton.styleFrom(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(5),
             ),
             primary: Colors.white,
             onPrimary: Color(0xffD6C9C9),
             textStyle: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
+              fontFamily: "Montserrat",
             ),
           ),
         ),

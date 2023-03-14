@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
+import 'package:project_kelompok_mobile/pages/storyinfo.dart';
 import 'package:project_kelompok_mobile/pages/write.dart';
 import 'package:project_kelompok_mobile/pages/signIn.dart';
 import 'package:project_kelompok_mobile/pages/signUp.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/pages/StoryInfo.dart';
+import 'package:project_kelompok_mobile/pages/storyInfo.dart';
 import './pages/search.dart';
 import './pages/notification.dart';
 
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: signIn());
+        home: signUp());
   }
 }

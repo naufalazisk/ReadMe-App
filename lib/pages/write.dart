@@ -43,7 +43,7 @@ class Write extends StatelessWidget {
         ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
-          selectedItemColor: Colors.pink,
+          selectedItemColor: Color.fromARGB(255, 220, 182, 195),
           unselectedItemColor: Colors.black12,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -56,15 +56,15 @@ class Write extends StatelessWidget {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.book),
-              label: 'Reward',
+              label: 'Library',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              label: 'Home',
+              label: 'Search',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.notification_add),
-              label: 'Home',
+              label: 'Notifications',
             ),
           ],
           currentIndex: 0,

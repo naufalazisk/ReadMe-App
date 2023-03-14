@@ -13,10 +13,17 @@ class TitlePage extends StatelessWidget {
           toolbarHeight: 70,
           elevation: 2,
           backgroundColor: Colors.white,
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.arrow_back),
+            color: Colors.black,
+            padding: EdgeInsets.only(left: 10),
+            iconSize: 30,
+          ),
           title: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
+            padding: const EdgeInsets.fromLTRB(105, 23, 0, 20),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: const [
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
@@ -117,7 +124,7 @@ class TitlePage extends StatelessWidget {
                   children: [
                     Container(
                       width: 365,
-                      height: 300,
+                      height: 250,
                       decoration: BoxDecoration(
                           border: Border.all(
                             color: Colors.black,
@@ -130,6 +137,30 @@ class TitlePage extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Center(
+                child: SizedBox(
+                  height: 60,
+                  width: 365,
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromARGB(255, 220, 182, 195),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5)),
+                        padding: EdgeInsets.all(10)),
+                    child: Text(
+                      "Pressed",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontFamily: "Monserrat",
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),

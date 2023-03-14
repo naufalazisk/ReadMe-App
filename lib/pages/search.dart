@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
-class Search extends StatelessWidget {
+class search extends StatelessWidget {
   var faker = Faker();
 
-  Search({super.key});
+  search({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,7 @@ class Search extends StatelessWidget {
         appBar: AppBar(
           toolbarHeight: 50,
           elevation: 2,
-          backgroundColor: Colors.white,
+          backgroundColor: Color(0xffD6C9C9),
           title: Padding(
             padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
             child: Row(
@@ -80,40 +80,39 @@ class Search extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.pink,
-          unselectedItemColor: Colors.black12,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.assignment),
-              label: 'Menu',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Reward',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_add),
-              label: 'Home',
-            ),
-          ],
-          currentIndex: 0,
-        ),
+            backgroundColor: Colors.white,
+            selectedItemColor: Colors.pink,
+            unselectedItemColor: Colors.black12,
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.assignment),
+                label: 'Write',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.book),
+                label: 'Library',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.notification_add),
+                label: 'Notification',
+              ),
+            ],
+            currentIndex: 3),
         body: ListView(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 22, top: 20),
+                  padding: EdgeInsets.only(left: 34, top: 20),
                   child: Text(
                     "Browse category",
                     style: TextStyle(
@@ -127,19 +126,159 @@ class Search extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
+                    margin: const EdgeInsets.only(top: 5, left: 34),
                     alignment: FractionalOffset.topCenter,
                     width: 360,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      "Drama",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        height: 2,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, left: 34),
+                    alignment: FractionalOffset.topCenter,
+                    width: 360,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      "Adventure",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        height: 2,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, left: 34),
+                    alignment: FractionalOffset.topCenter,
+                    width: 360,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      "Romance",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        height: 2,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, left: 34),
+                    alignment: FractionalOffset.topCenter,
+                    width: 360,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
+                        ),
+                      ],
+                    ),
+                    child: Text(
+                      "Comedy",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        height: 2,
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Container(
+                    margin: const EdgeInsets.only(top: 5, left: 34),
+                    alignment: FractionalOffset.topCenter,
+                    width: 360,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.5),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
                         ),
                       ],
                     ),
@@ -162,24 +301,24 @@ class Search extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
+                    margin: const EdgeInsets.only(top: 5, left: 34),
                     alignment: FractionalOffset.topCenter,
                     width: 360,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
                         ),
                       ],
                     ),
                     child: Text(
-                      "Horror",
+                      "Sci-fi",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         height: 2,
@@ -197,24 +336,24 @@ class Search extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
+                    margin: const EdgeInsets.only(top: 5, left: 34),
                     alignment: FractionalOffset.topCenter,
                     width: 360,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
                         ),
                       ],
                     ),
                     child: Text(
-                      "Horror",
+                      "Thriller",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         height: 2,
@@ -232,164 +371,24 @@ class Search extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
+                    margin: const EdgeInsets.only(top: 5, left: 34),
                     alignment: FractionalOffset.topCenter,
                     width: 360,
                     height: 80,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
+                      color: Color(0xffD6C9C9),
+                      borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0),
                         ),
                       ],
                     ),
                     child: Text(
-                      "Horror",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        height: 2,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
-                    alignment: FractionalOffset.topCenter,
-                    width: 360,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      "Horror",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        height: 2,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
-                    alignment: FractionalOffset.topCenter,
-                    width: 360,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      "Horror",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        height: 2,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
-                    alignment: FractionalOffset.topCenter,
-                    width: 360,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      "Horror",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        height: 2,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Container(
-                    margin: const EdgeInsets.only(top: 5, left: 25),
-                    alignment: FractionalOffset.topCenter,
-                    width: 360,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 220, 182, 195),
-                      borderRadius: BorderRadius.circular(5),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 7,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Text(
-                      "Horror",
+                      "Slice of Life",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         height: 2,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_kelompok_mobile/pages/signUp.dart';
+import 'package:project_kelompok_mobile/pages/home.dart';
 
 class signIn extends StatefulWidget {
   @override
@@ -139,14 +141,30 @@ class _signInState extends State<signIn> {
     );
   }
 
-  Widget buildLoginBtn() {
+  Widget buildLoginBtn(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
+      height: 125,
       child: Padding(
         padding: EdgeInsets.all(15),
         child: ElevatedButton(
-          onPressed: () => print('Login Pressed'),
+          onPressed: () {
+            print('Login Pressed');
+            Navigator.of(context).push(
+              PageRouteBuilder(
+                pageBuilder: (context, animation, secondaryAnimation) => home(),
+                transitionsBuilder:
+                    (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                transitionDuration: Duration(milliseconds: 700),
+              ),
+            );
+          },
           child: Text('LOGIN'),
           style: ElevatedButton.styleFrom(
             elevation: 5,
@@ -165,18 +183,34 @@ class _signInState extends State<signIn> {
     );
   }
 
-  Widget buildSignUpBtn() {
+  Widget buildSignUpBtn(BuildContext context) {
     return GestureDetector(
-      onTap: () => print('Sign Up Pressed'),
+      onTap: () {
+        print('Sign Up Pressed');
+        Navigator.of(context).push(
+          PageRouteBuilder(
+            pageBuilder: (context, animation, secondaryAnimation) => signUp(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+              return FadeTransition(
+                opacity: animation,
+                child: child,
+              );
+            },
+            transitionDuration: Duration(milliseconds: 700),
+          ),
+        );
+      },
       child: RichText(
         text: TextSpan(children: [
           TextSpan(
-              text: 'Don\'t have an Account? ',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-              )),
+            text: 'Don\'t have an Account? ',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
           TextSpan(
             text: 'Sign Up',
             style: TextStyle(
@@ -184,7 +218,7 @@ class _signInState extends State<signIn> {
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
-          )
+          ),
         ]),
       ),
     );
@@ -230,8 +264,8 @@ class _signInState extends State<signIn> {
                     buildPassword(),
                     buildForgotPassBtn(),
                     buildRememberCb(),
-                    buildLoginBtn(),
-                    buildSignUpBtn(),
+                    buildLoginBtn(context),
+                    buildSignUpBtn(context),
                   ],
                 ),
               ),

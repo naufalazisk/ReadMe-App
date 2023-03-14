@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
-class StoryInfo extends StatelessWidget {
-  StoryInfo({super.key});
+class storyInfo extends StatelessWidget {
+  storyInfo({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +31,13 @@ class StoryInfo extends StatelessWidget {
                 ),
               ],
             ),
-          )),
-      body: Column(
-        children: [Container()],
+          )
+        ),
+      body: Container(
+        height: 100,
+        width: 400,
+        child: ,
+      );
       ),
     );
   }

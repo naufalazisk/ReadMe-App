@@ -36,7 +36,6 @@ class storyInfo extends StatelessWidget {
       body: Container(
         height: 100,
         width: 400,
-        child: ,
       );
       ),
     );

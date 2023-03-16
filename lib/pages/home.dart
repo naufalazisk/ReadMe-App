@@ -1,12 +1,14 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/pages/kategori.dart';
+import 'package:project_kelompok_mobile/pages/StoryInside.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
-class home extends StatelessWidget {
+class Home extends StatelessWidget {
   var faker = Faker();
 
-  home({super.key});
+  Home({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,10 +100,30 @@ class home extends StatelessWidget {
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           children: [
-                            Trending(),
-                            Trending(),
-                            Trending(),
-                            Trending(),
+                            InkWell(
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StoryInside())),
+                                child: Trending()),
+                            InkWell(
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StoryInside())),
+                                child: Trending()),
+                            InkWell(
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StoryInside())),
+                                child: Trending()),
+                            InkWell(
+                                onTap: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => StoryInside())),
+                                child: Trending()),
                           ],
                         ),
                       ),
@@ -146,69 +168,56 @@ class home extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text(
-                                                  "Kategorii",
-                                                  style: TextStyle(
-                                                    fontFamily: "Montserrat",
-                                                    fontSize: 14,
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Drama",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
                                                   ),
-                                                  textAlign: TextAlign.left,
                                                 ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
                                             ),
                                           ),
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Adventure",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 5, right: 5),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
-                                              ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
-                                            ),
-                                          ),
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
-                                              ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
                                             ),
                                           ),
                                         ],
@@ -221,28 +230,118 @@ class home extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Horror",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
                                             ),
                                           ),
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Sci-fi",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(
+                                          left: 5, right: 5),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Thriller",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
+                                              ),
+                                            ),
+                                          ),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Slice of Life",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -255,28 +354,56 @@ class home extends StatelessWidget {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: [
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Komedi",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
                                             ),
                                           ),
-                                          const SizedBox(
-                                            width: 174,
-                                            height: 40,
-                                            child: Card(
-                                              child: Padding(
-                                                padding: EdgeInsets.all(8.0),
-                                                child: Text('Kategorii'),
+                                          InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        kategori())),
+                                            child: const SizedBox(
+                                              width: 174,
+                                              height: 40,
+                                              child: Card(
+                                                child: Padding(
+                                                  padding: EdgeInsets.all(8.0),
+                                                  child: Text(
+                                                    "Romance",
+                                                    style: TextStyle(
+                                                      fontFamily: "Montserrat",
+                                                      fontSize: 14,
+                                                    ),
+                                                    textAlign: TextAlign.left,
+                                                  ),
+                                                ),
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                               ),
-                                              color: Color.fromARGB(
-                                                  255, 230, 214, 220),
                                             ),
                                           ),
                                         ],
@@ -318,20 +445,55 @@ class home extends StatelessWidget {
                                     child: ListView(
                                       scrollDirection: Axis.horizontal,
                                       children: [
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
-                                        Poster(image: aot),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
+                                        InkWell(
+                                            onTap: () => Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        StoryInside())),
+                                            child: Poster(image: aot)),
                                       ],
                                     ),
                                   ),

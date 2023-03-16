@@ -2,10 +2,10 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class Notif extends StatelessWidget {
+class notification extends StatelessWidget {
   final faker = Faker();
 
-  Notif({super.key});
+  notification({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

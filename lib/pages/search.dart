@@ -2,7 +2,6 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_kelompok_mobile/pages/kategori.dart';
-import 'package:project_kelompok_mobile/pages/onSearch.dart';
 import 'package:intl/intl.dart';
 
 class search extends StatelessWidget {
@@ -71,12 +70,7 @@ class search extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-                    onPressed: () => {
-                      Navigator.of(context).push(PageRouteBuilder(
-                        pageBuilder: (context, animation, secondaryAnimation) =>
-                            onSearch(),
-                      ))
-                    },
+                    onPressed: () => {},
                     icon: Icon(Icons.search),
                     color: Colors.grey,
                     padding: EdgeInsets.only(top: 5),

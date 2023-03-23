@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'pages/home.dart';
+import 'pages/search.dart';
+import 'pages/write.dart';
+import 'pages/notification.dart';
+import 'pages/library.dart';
+import 'pages/StoryInside.dart';
+import 'pages/profile.dart';
 
 void main() => runApp(const MyApp());
 

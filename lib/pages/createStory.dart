@@ -81,8 +81,8 @@ class createStory extends StatelessWidget {
                       width: 70,
                       height: 100,
                       child: Image.asset(
-                        "images/image 1",
-                        fit: BoxFit.cover,
+                        "images/image 1.png",
+                        fit: BoxFit.fill,
                       ),
                     ),
                     Padding(

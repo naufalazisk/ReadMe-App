@@ -13,26 +13,18 @@ class StoryInside extends StatelessWidget {
         elevation: 2,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () {},
+          iconSize: 35,
+          onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.arrow_back),
+          color: Colors.black,
         ),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 23, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                child: Text("Title",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w700)),
-              ),
-            ],
-          ),
-        ),
+        title: Text("Title",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700)),
       ),
     );
   }

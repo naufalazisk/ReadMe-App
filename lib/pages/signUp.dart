@@ -190,9 +190,10 @@ class _signUpState extends State<signUp> {
   Widget buildSignUpBtn() {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
+      height: 110,
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.all(5),
+        padding: EdgeInsets.only(top: 10),
         child: ElevatedButton(
           onPressed: () {
             Navigator.of(context).push(
@@ -214,7 +215,7 @@ class _signUpState extends State<signUp> {
           style: ElevatedButton.styleFrom(
             elevation: 5,
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(15),
             ),
             primary: Colors.white,
             onPrimary: Color(0xffD6C9C9),

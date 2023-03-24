@@ -2,6 +2,7 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:project_kelompok_mobile/pages/kategori.dart';
+import 'package:project_kelompok_mobile/pages/onSearch.dart';
 import 'package:intl/intl.dart';
 
 class search extends StatelessWidget {
@@ -58,15 +59,19 @@ class search extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0, top: 4),
-                    child: Text(
-                      "Search for stories or people",
-                      style: TextStyle(
-                        fontFamily: 'LexendDeca',
-                        fontSize: 16,
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => onSearch())),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15.0, top: 4),
+                      child: Text(
+                        "Search for stories or people",
+                        style: TextStyle(
+                          fontFamily: 'LexendDeca',
+                          fontSize: 16,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),
                   IconButton(
@@ -90,7 +95,7 @@ class search extends StatelessWidget {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.assignment),
+                icon: Icon(Icons.edit_sharp),
                 label: 'Write',
               ),
               BottomNavigationBarItem(

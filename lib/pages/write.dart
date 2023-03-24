@@ -13,6 +13,7 @@ class Write extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 70,
           elevation: 2,
           backgroundColor: Colors.white,
@@ -41,6 +42,34 @@ class Write extends StatelessWidget {
               ],
             ),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          selectedItemColor: Color.fromARGB(255, 220, 182, 195),
+          unselectedItemColor: Colors.black12,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.edit_sharp),
+              label: 'Write',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: 'Library',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.search),
+              label: 'Search',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notification_add),
+              label: 'Notifications',
+            ),
+          ],
+          currentIndex: 1,
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),

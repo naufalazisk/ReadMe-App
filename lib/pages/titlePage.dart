@@ -137,29 +137,46 @@ class TitlePage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Center(
-                child: SizedBox(
-                  height: 60,
-                  width: 365,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        primary: Color.fromARGB(255, 220, 182, 195),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)),
-                        padding: EdgeInsets.all(10)),
-                    child: Text(
-                      "Pressed",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: "Monserrat",
-                          fontWeight: FontWeight.w500),
+            Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 20),
+                  child: SizedBox(
+                    height: 60,
+                    width: 300,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          primary: Color.fromARGB(255, 220, 182, 195),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          padding: EdgeInsets.all(10)),
+                      child: Text(
+                        "Start Reading",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily: "Monserrat",
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 10),
+                  child: SizedBox(
+                    height: 60,
+                    width: 50,
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        style: ElevatedButton.styleFrom(
+                            primary: Color.fromARGB(255, 220, 182, 195),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(5)),
+                            padding: EdgeInsets.all(10)),
+                        child: Icon(Icons.add)),
+                  ),
+                )
+              ],
             )
           ],
         ),

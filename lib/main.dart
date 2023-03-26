@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
 import 'package:project_kelompok_mobile/pages/createStory.dart';
+import 'package:project_kelompok_mobile/pages/kategori.dart';
 import 'package:project_kelompok_mobile/pages/write.dart';
 import 'package:project_kelompok_mobile/pages/signIn.dart';
 import 'package:project_kelompok_mobile/pages/signUp.dart';
@@ -27,6 +28,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: Write());
+        home: kategori());
   }
 }

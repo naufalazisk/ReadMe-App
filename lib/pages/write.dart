@@ -1,13 +1,12 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/createStory.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:intl/intl.dart';
 
-class Write extends StatelessWidget {
+class write extends StatelessWidget {
   var faker = Faker();
 
-  Write({super.key});
+  write({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

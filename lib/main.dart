@@ -12,6 +12,7 @@ import 'package:project_kelompok_mobile/pages/library.dart';
 import 'package:project_kelompok_mobile/pages/onSearch.dart';
 import './pages/search.dart';
 import './pages/notification.dart';
+import 'package:project_kelompok_mobile/navbar.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -28,6 +29,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: kategori());
+        home: navbar());
   }
 }

@@ -17,7 +17,7 @@ class createStory extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).push(PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => Write(),
+              pageBuilder: (context, animation, secondaryAnimation) => write(),
             ));
           },
           icon: Icon(

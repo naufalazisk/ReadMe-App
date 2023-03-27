@@ -15,7 +15,7 @@ class onSearch extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               Padding(
-                padding: EdgeInsets.fromLTRB(140, 25, 0, 10),
+                padding: EdgeInsets.fromLTRB(90, 25, 0, 10),
                 child: Text(
                   "Search",
                   style: TextStyle(
@@ -62,33 +62,6 @@ class onSearch extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.pink,
-          unselectedItemColor: Colors.black12,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.edit_sharp),
-              label: 'Write',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Library',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_add),
-              label: 'Notification',
-            ),
-          ],
-          currentIndex: 3),
     );
   }
 }

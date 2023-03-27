@@ -1,6 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/createStory.dart';
+import 'package:project_kelompok_mobile/pages/profile.dart';
 import 'package:intl/intl.dart';
 
 class write extends StatelessWidget {
@@ -20,7 +21,7 @@ class write extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Padding(
                   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Text("Write",
@@ -32,43 +33,23 @@ class write extends StatelessWidget {
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    radius: 20,
-                    backgroundImage:
-                        NetworkImage("https://picsum.photos/130/130"),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage()));
+                    },
+                    child: CircleAvatar(
+                      radius: 20,
+                      backgroundImage:
+                          NetworkImage("https://picsum.photos/130/130"),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.white,
-          selectedItemColor: Color.fromARGB(255, 220, 182, 195),
-          unselectedItemColor: Colors.black12,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.edit_sharp),
-              label: 'Write',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.book),
-              label: 'Library',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notification_add),
-              label: 'Notifications',
-            ),
-          ],
-          currentIndex: 1,
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),

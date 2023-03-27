@@ -1,8 +1,9 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/kategori.dart';
+import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
 import 'package:intl/intl.dart';
+import 'package:project_kelompok_mobile/pages/profile.dart';
 
 class home extends StatelessWidget {
   var faker = Faker();
@@ -13,6 +14,7 @@ class home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 70,
         elevation: 2,
         backgroundColor: Colors.white,
@@ -20,7 +22,7 @@ class home extends StatelessWidget {
           padding: const EdgeInsets.fromLTRB(5, 23, 10, 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
+            children: [
               Padding(
                 padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Text("Home",
@@ -32,43 +34,21 @@ class home extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  radius: 20,
-                  backgroundImage:
-                      NetworkImage("https://picsum.photos/130/130"),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ProfilePage()));
+                  },
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundImage:
+                        NetworkImage("https://picsum.photos/130/130"),
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.white,
-        selectedItemColor: Color.fromARGB(255, 220, 182, 195),
-        unselectedItemColor: Colors.black12,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.assignment),
-            label: 'Menu',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Library',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notification_add),
-            label: 'Notifications',
-          ),
-        ],
-        currentIndex: 0,
       ),
       body: Column(
         children: [
@@ -172,7 +152,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -198,7 +178,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -234,7 +214,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -260,7 +240,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -296,7 +276,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -322,7 +302,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -358,7 +338,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -384,7 +364,7 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -551,11 +531,17 @@ class Trending extends StatelessWidget {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
+              children: [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(3, 2, 8, 0),
-                  child: Text("Sinopsis dari cerita yang dipublikasikan"),
-                ),
+                    padding: EdgeInsets.fromLTRB(3, 2, 4, 0),
+                    child: Flexible(
+                      child: Text(
+                        "Sinopsis dari cerita yang dipublikasikan",
+                        style: TextStyle(fontSize: 13),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
+                    )),
               ],
             )
           ],
@@ -583,7 +569,7 @@ class Poster extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Image(
-            image: AssetImage(image),
+            image: AssetImage('images/image_1.png'),
             width: 120,
             height: 180,
             fit: BoxFit.fitWidth,
@@ -595,7 +581,7 @@ class Poster extends StatelessWidget {
 }
 
 //Images Poster
-String aot = "images/image 1.jpeg";
+String aot = "images/image_1.png";
 String aot1 = "images/image 8.png";
 String aot2 = "images/image 16.png";
 String aot3 = "images/image 11.png";

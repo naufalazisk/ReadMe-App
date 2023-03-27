@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:project_kelompok_mobile/navbar.dart';
 import 'package:project_kelompok_mobile/pages/signUp.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
 
@@ -153,7 +154,8 @@ class _signInState extends State<signIn> {
             print('Login Pressed');
             Navigator.of(context).push(
               PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) => home(),
+                pageBuilder: (context, animation, secondaryAnimation) =>
+                    navbar(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                   return FadeTransition(

@@ -30,6 +30,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.purple,
         ),
-        home: signIn());
+        home: navbar());
   }
 }

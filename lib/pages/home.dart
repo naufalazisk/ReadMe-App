@@ -113,7 +113,7 @@ class home extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                width: 365,
+                                width: 385,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Colors.black,

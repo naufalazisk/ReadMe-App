@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
+import 'package:project_kelompok_mobile/pages/titlePage.dart';
 
 class Library extends StatelessWidget {
   @override
@@ -102,7 +103,7 @@ class Poster extends StatelessWidget {
       child: InkWell(
         onTap: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => StoryInside()),
+          MaterialPageRoute(builder: (context) => TitlePage()),
         ),
         child: Container(
           // width: 120,

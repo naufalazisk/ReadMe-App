@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
-import 'package:project_kelompok_mobile/pages/StoryInside.dart';
+import 'package:project_kelompok_mobile/pages/titlePage.dart';
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/profile.dart';
 
@@ -83,25 +83,25 @@ class home extends StatelessWidget {
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                           ],
                         ),
@@ -429,49 +429,49 @@ class home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                       ],
                                     ),
@@ -514,7 +514,7 @@ class Trending extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(5),
               child: const Image(
-                image: NetworkImage("https://picsum.photos/280/130"),
+                image: AssetImage('images/image 4.png'),
                 width: 280,
                 height: 130,
                 fit: BoxFit.cover,
@@ -569,7 +569,7 @@ class Poster extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(15),
           child: Image(
-            image: AssetImage('images/image_1.png'),
+            image: AssetImage('images/image 1.png'),
             width: 120,
             height: 180,
             fit: BoxFit.fitWidth,
@@ -581,7 +581,7 @@ class Poster extends StatelessWidget {
 }
 
 //Images Poster
-String aot = "images/image_1.png";
+String aot = "images/image 1.png";
 String aot1 = "images/image 8.png";
 String aot2 = "images/image 16.png";
 String aot3 = "images/image 11.png";

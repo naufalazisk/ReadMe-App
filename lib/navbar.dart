@@ -17,7 +17,7 @@ class navbar extends StatelessWidget {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.note),
+            icon: Icon(Icons.edit),
             label: 'Write',
           ),
           BottomNavigationBarItem(

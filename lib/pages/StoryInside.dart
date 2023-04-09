@@ -18,7 +18,7 @@ class StoryInside extends StatelessWidget {
           icon: Icon(Icons.arrow_back),
           color: Colors.black,
         ),
-        title: Text("Title",
+        title: Text("Part title",
             textAlign: TextAlign.center,
             style: TextStyle(
                 color: Colors.black,

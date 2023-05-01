@@ -128,6 +128,7 @@ class createStory extends StatelessWidget {
               child: SizedBox(
                 width: 400,
                 child: TextField(
+                  maxLines: null,
                   style: TextStyle(color: Colors.black87),
                   decoration: InputDecoration(
                     border: InputBorder.none,

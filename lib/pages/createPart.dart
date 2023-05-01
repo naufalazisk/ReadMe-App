@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:project_kelompok_mobile/pages/createStory.dart';
+import 'package:project_kelompok_mobile/pages/titlePage.dart';
 
 class createPart extends StatelessWidget {
   @override
@@ -46,7 +47,7 @@ class createPart extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 25, 15, 0),
             child: InkWell(
               onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => createPart())),
+                  MaterialPageRoute(builder: (context) => TitlePage())),
               child: Text(
                 "Publish",
                 style: TextStyle(
@@ -94,7 +95,8 @@ class createPart extends StatelessWidget {
               child: SizedBox(
                 width: 400,
                 child: TextField(
-                  textAlign: TextAlign.center,
+                  maxLines: null,
+                  textAlign: TextAlign.left,
                   style: TextStyle(color: Colors.black87),
                   decoration: InputDecoration(
                     border: InputBorder.none,

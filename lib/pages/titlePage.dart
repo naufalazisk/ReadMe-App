@@ -13,7 +13,7 @@ class TitlePage extends StatelessWidget {
           elevation: 2,
           backgroundColor: Colors.white,
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.pop(context),
             icon: Icon(Icons.arrow_back),
             color: Colors.black,
             padding: EdgeInsets.only(left: 10),

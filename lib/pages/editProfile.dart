@@ -44,7 +44,7 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: Color(0xffD6C9C9),
         title: Text("Edit Profile"),
       ),
       body: SingleChildScrollView(
@@ -119,8 +119,8 @@ class _EditProfileState extends State<EditProfile> {
                 SizedBox(height: 32),
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.deepOrangeAccent),
+                    backgroundColor: MaterialStateProperty.all(
+                        Color.fromARGB(255, 194, 151, 151)),
                     overlayColor:
                         MaterialStateProperty.all(Colors.orangeAccent),
                     shape: MaterialStateProperty.all(

@@ -13,6 +13,7 @@ class StoryInside extends StatelessWidget {
         elevation: 2,
         backgroundColor: Colors.white,
         leading: IconButton(
+<<<<<<< HEAD
           onPressed: () {},
           icon: Icon(Icons.arrow_back),
         ),
@@ -61,6 +62,20 @@ class StoryInside extends StatelessWidget {
           ),
         ],
         currentIndex: 0,
+=======
+          iconSize: 35,
+          onPressed: () => Navigator.pop(context),
+          icon: Icon(Icons.arrow_back),
+          color: Colors.black,
+        ),
+        title: Text("Part title",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700)),
+>>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
       ),
     );
   }

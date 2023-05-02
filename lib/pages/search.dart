@@ -1,6 +1,9 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:google_nav_bar/google_nav_bar.dart';
+=======
+>>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
 import 'package:project_kelompok_mobile/pages/kategori.dart';
 import 'package:project_kelompok_mobile/pages/onSearch.dart';
 import 'package:intl/intl.dart';
@@ -14,6 +17,7 @@ class search extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           toolbarHeight: 50,
           elevation: 2,
           backgroundColor: Color(0xffD6C9C9),
@@ -23,7 +27,7 @@ class search extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: const [
                 Padding(
-                  padding: EdgeInsets.fromLTRB(140, 25, 0, 10),
+                  padding: EdgeInsets.fromLTRB(145, 25, 0, 10),
                   child: Text(
                     "Search",
                     style: TextStyle(
@@ -59,24 +63,32 @@ class search extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15.0, top: 4),
-                    child: Text(
-                      "Search for stories or people",
-                      style: TextStyle(
-                        fontFamily: 'LexendDeca',
-                        fontSize: 16,
+                  InkWell(
+                    onTap: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => onSearch())),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15.0, top: 4),
+                      child: Text(
+                        "Search for stories or people",
+                        style: TextStyle(
+                          fontFamily: 'LexendDeca',
+                          fontSize: 16,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),
                   IconButton(
+<<<<<<< HEAD
                     onPressed: () => {
                       Navigator.of(context).push(PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
                             onSearch(),
                       ))
                     },
+=======
+                    onPressed: () => {},
+>>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                     icon: Icon(Icons.search),
                     color: Colors.grey,
                     padding: EdgeInsets.only(top: 5),
@@ -86,33 +98,6 @@ class search extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
-            selectedItemColor: Colors.pink,
-            unselectedItemColor: Colors.black12,
-            items: const <BottomNavigationBarItem>[
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: 'Home',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.assignment),
-                label: 'Write',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.book),
-                label: 'Library',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.search),
-                label: 'Search',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.notification_add),
-                label: 'Notification',
-              ),
-            ],
-            currentIndex: 3),
         body: ListView(
           children: [
             Column(

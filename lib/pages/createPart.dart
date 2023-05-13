@@ -46,8 +46,8 @@ class createPart extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 25, 15, 0),
             child: InkWell(
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TitlePage())),
+              // onTap: () => Navigator.push(context,
+              //     MaterialPageRoute(builder: (context) => TitlePage())),
               child: Text(
                 "Publish",
                 style: TextStyle(

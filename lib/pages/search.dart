@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/kategori.dart';
-import 'package:project_kelompok_mobile/pages/onSearch.dart';
+import '../pages/categoryHome.dart';
+import '../pages/onSearch.dart';
 import 'package:intl/intl.dart';
 
 class search extends StatelessWidget {
@@ -104,7 +104,7 @@ class search extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -143,7 +143,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -182,7 +182,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -221,7 +221,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -260,7 +260,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -299,7 +299,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -338,7 +338,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(
@@ -377,7 +377,7 @@ class search extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => kategori())),
+                      MaterialPageRoute(builder: (context) => categoryHome())),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Container(

@@ -107,56 +107,56 @@ class _ProfilePageState extends State<ProfilePage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  SizedBox(
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                      ],
-                    ),
-                  ),
+                  // SizedBox(
+                  //   height: 250,
+                  //   child: ListView(
+                  //     scrollDirection: Axis.horizontal,
+                  //     children: [
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(height: 16),
                   ElevatedButton(
                     style: ButtonStyle(

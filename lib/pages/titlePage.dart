@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import '../models/story.dart';
+import '../providers/stories.dart';
 
+// udah dipindah ke widgets
 class TitlePage extends StatelessWidget {
-  TitlePage({super.key});
+  int id;
+  String title;
+  String description;
+  String writer;
+  String category;
+  String image;
+
+  TitlePage(this.id, this.title, this.description, this.writer, this.category, this.image,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,23 +32,18 @@ class TitlePage extends StatelessWidget {
             iconSize: 30,
           ),
           title: Padding(
-            padding: const EdgeInsets.fromLTRB(105, 23, 0, 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                  child: Text(
-                    "Title",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w700),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+            padding: const EdgeInsets.fromLTRB(0, 23, 0, 20),
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              child: Text(
+                title,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontFamily: "Montserrat",
+                    fontWeight: FontWeight.w700),
+                textAlign: TextAlign.center,
+              ),
             ),
           )),
       body: SingleChildScrollView(
@@ -50,20 +57,19 @@ class TitlePage extends StatelessWidget {
                   height: 160,
                   width: 120,
                   child: ClipRRect(
-                    borderRadius: BorderRadius.circular(5),
-                    child: Image(
-                      image: AssetImage('images/image 1.png'),
-                      width: 160,
-                      height: 120,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                      borderRadius: BorderRadius.circular(5),
+                      child: Image(
+                        image: NetworkImage(image),
+                        height: 160,
+                        width: 120,
+                        fit: BoxFit.fill,
+                      )),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(15),
                 child: Text(
-                  "Title",
+                  title,
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 25,
@@ -84,7 +90,7 @@ class TitlePage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Writer",
+                      writer,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 15,
@@ -97,16 +103,16 @@ class TitlePage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(bottom: 8),
                 child: Container(
                   width: 50,
                   height: 13,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
                       color: Colors.black),
-                  child: const Center(
+                  child: Center(
                       child: Text(
-                    "Horror",
+                    category,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 10,
@@ -131,8 +137,7 @@ class TitlePage extends StatelessWidget {
                             borderRadius: BorderRadius.all(Radius.circular(5))),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc. "),
+                          child: Text(description),
                         ),
                       )
                     ],
@@ -146,19 +151,19 @@ class TitlePage extends StatelessWidget {
                     child: SizedBox(
                       height: 60,
                       width: 300,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            primary: Color.fromARGB(255, 220, 182, 195),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5)),
-                            padding: EdgeInsets.all(10)),
-                        child: Text(
-                          "Start Reading",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: "Monserrat",
-                              fontWeight: FontWeight.w500),
+                      child: FittedBox(
+                        child: FloatingActionButton(
+                          backgroundColor: Color.fromARGB(255, 220, 182, 195),
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(5)),
+                          child: Text(
+                            "Start Reading",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: "Monserrat",
+                                fontWeight: FontWeight.w500),
+                          ),
+                          onPressed: () {},
                         ),
                       ),
                     ),

@@ -2,17 +2,25 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/kategori.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
-import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
 import 'package:intl/intl.dart';
-import 'package:project_kelompok_mobile/pages/profile.dart';
+import 'package:provider/provider.dart';
+
+import '../pages/titlePage.dart';
+import '../pages/categoryHome.dart';
+import '../pages/profile.dart';
+import '../providers/stories.dart';
+import '../widgets/poster.dart';
+import '../widgets/trending.dart';
 
 class Home extends StatelessWidget {
   var faker = Faker();
 
-  Home({super.key});
+  home({super.key});
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<Stories>(context);
+    final dataMain = data.allstory;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -56,7 +64,7 @@ class Home extends StatelessWidget {
         children: [
           Flexible(
             child: Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -78,32 +86,32 @@ class Home extends StatelessWidget {
                       ),
                       SizedBox(
                         height: 180,
-                        child: ListView(
+                        child: ListView.builder(
                           scrollDirection: Axis.horizontal,
                           children: [
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => StoryInside())),
+                                        builder: (context) => TitlePage())),
                                 child: Trending()),
                           ],
                         ),
@@ -115,7 +123,7 @@ class Home extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Container(
-                                width: 385,
+                                width: 405,
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                       color: Colors.black,
@@ -154,7 +162,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -180,7 +188,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -216,7 +224,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -242,7 +250,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -278,7 +286,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -304,7 +312,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -340,7 +348,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -366,7 +374,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategori())),
+                                                        kategoriHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -423,7 +431,7 @@ class Home extends StatelessWidget {
                                   ),
                                   SizedBox(
                                     height: 180,
-                                    child: ListView(
+                                    child: ListView.builder(
                                       scrollDirection: Axis.horizontal,
                                       children: [
                                         InkWell(
@@ -431,49 +439,49 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        StoryInside())),
+                                                        TitlePage())),
                                             child: Poster(image: aot)),
                                       ],
                                     ),
@@ -495,96 +503,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-class Trending extends StatelessWidget {
-  const Trending({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20),
-      child: Container(
-        width: 280,
-        height: 160,
-        color: Colors.transparent,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: const Image(
-                image: AssetImage('images/image 4.png'),
-                width: 280,
-                height: 130,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(3, 10, 0, 5),
-              child: Text("Tittle story",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 14,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "Montserrat")),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                    padding: EdgeInsets.fromLTRB(3, 2, 4, 0),
-                    child: Flexible(
-                      child: Text(
-                        "Sinopsis dari cerita yang dipublikasikan",
-                        style: TextStyle(fontSize: 13),
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                      ),
-                    )),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class Poster extends StatelessWidget {
-  final String image;
-
-  Poster({
-    required this.image,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 2.5, right: 2.5),
-      child: Container(
-        width: 120,
-        height: 180,
-        color: Colors.transparent,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(15),
-          child: Image(
-            image: AssetImage('images/image 1.png'),
-            width: 120,
-            height: 180,
-            fit: BoxFit.fitWidth,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-//Images Poster
-String aot = "images/image 1.png";
-String aot1 = "images/image 8.png";
-String aot2 = "images/image 16.png";
-String aot3 = "images/image 11.png";
-String aot4 = "images/image 14.png";

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
 import 'package:project_kelompok_mobile/pages/editProfile.dart';
+import 'package:project_kelompok_mobile/pages/setting.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -22,6 +23,20 @@ class _ProfilePageState extends State<ProfilePage> {
       appBar: AppBar(
         backgroundColor: Color(0xffD6C9C9),
         title: Text("Profile"),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Setting()));
+              },
+              icon: const Icon(Icons.settings),
+              color: Colors.white,
+              iconSize: 25,
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -92,56 +107,56 @@ class _ProfilePageState extends State<ProfilePage> {
                       textAlign: TextAlign.left,
                     ),
                   ),
-                  SizedBox(
-                    height: 250,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                        InkWell(
-                            onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TitlePage())),
-                            child: userStory()),
-                      ],
-                    ),
-                  ),
+                  // SizedBox(
+                  //   height: 250,
+                  //   child: ListView(
+                  //     scrollDirection: Axis.horizontal,
+                  //     children: [
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //       InkWell(
+                  //           onTap: () => Navigator.push(
+                  //               context,
+                  //               MaterialPageRoute(
+                  //                   builder: (context) => TitlePage())),
+                  //           child: userStory()),
+                  //     ],
+                  //   ),
+                  // ),
                   SizedBox(height: 16),
                   ElevatedButton(
                     style: ButtonStyle(

@@ -1,93 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/search.dart';
-import 'package:project_kelompok_mobile/pages/titlepage.dart';
 import 'package:flutter/services.dart';
+import 'package:project_kelompok_mobile/pages/search.dart';
+import 'package:project_kelompok_mobile/pages/titlePage.dart';
+import 'package:provider/provider.dart';
+import '../pages/titlePage.dart';
+import '../models/story.dart';
 
-class kategori extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        toolbarHeight: 70,
-        elevation: 2,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).push(PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => search(),
-            ));
-          },
-          icon: Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-            size: 35,
-          ),
-        ),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(0, 23, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(100, 10, 0, 10),
-                child: Text("Horror",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w700)),
-              ),
-            ],
-          ),
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(bottom: 10, top: 20),
-                    child: Text("All Stories",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Montserrat")),
-                  ),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
+import '../providers/stories.dart';
 
-class theKategori extends StatelessWidget {
-  const theKategori({
-    super.key,
-  });
+// 1 widget cerita pada kategori
+
+class category extends StatelessWidget {
+  const category({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final data = Provider.of<Story>(context);
+
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TitlePage()));
+            context,
+            MaterialPageRoute(
+                builder: (context) => TitlePage(data.id, data.title, data.image,
+                    data.writer, data.category, data.description)));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 5),
@@ -100,8 +36,8 @@ class theKategori extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
-                child: const Image(
-                  image: NetworkImage("https://picsum.photos/90/100"),
+                child: Image(
+                  image: NetworkImage(data.image),
                   width: 90,
                   height: 200,
                   fit: BoxFit.cover,
@@ -113,11 +49,11 @@ class theKategori extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(top: 0, bottom: 1),
                       child: SizedBox(
                         width: 250,
-                        child: Text("Title",
+                        child: Text(data.title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: TextStyle(
@@ -128,19 +64,19 @@ class theKategori extends StatelessWidget {
                                 fontFamily: "Montserrat")),
                       ),
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(left: 0),
-                      child: Text("Writer",
+                      child: Text(data.writer,
                           style: TextStyle(
                               color: Colors.pink,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               fontFamily: "Montserrat")),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       width: 250,
                       child: Text(
-                        "Sinopsis dari cerita yang ada bisa panjang sampai 2 baris maksimal",
+                        data.description,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -162,9 +98,9 @@ class theKategori extends StatelessWidget {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(3),
                                 color: Colors.black),
-                            child: const Center(
+                            child: Center(
                                 child: Text(
-                              "Horror",
+                              data.category,
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,

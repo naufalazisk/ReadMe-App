@@ -1,9 +1,5 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:google_nav_bar/google_nav_bar.dart';
-=======
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
 import 'package:project_kelompok_mobile/pages/kategori.dart';
 import 'package:project_kelompok_mobile/pages/onSearch.dart';
 import 'package:intl/intl.dart';
@@ -79,16 +75,12 @@ class search extends StatelessWidget {
                     ),
                   ),
                   IconButton(
-<<<<<<< HEAD
                     onPressed: () => {
                       Navigator.of(context).push(PageRouteBuilder(
                         pageBuilder: (context, animation, secondaryAnimation) =>
                             onSearch(),
                       ))
                     },
-=======
-                    onPressed: () => {},
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                     icon: Icon(Icons.search),
                     color: Colors.grey,
                     padding: EdgeInsets.only(top: 5),

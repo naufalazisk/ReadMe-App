@@ -16,7 +16,7 @@ class kategoriHome extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).push(PageRouteBuilder(
-              pageBuilder: (context, animation, secondaryAnimation) => home(),
+              pageBuilder: (context, animation, secondaryAnimation) => Home(),
             ));
           },
           icon: Icon(

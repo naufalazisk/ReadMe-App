@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-<<<<<<< HEAD
-=======
 import 'package:project_kelompok_mobile/pages/search.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
+import 'package:project_kelompok_mobile/pages/titlepage.dart';
+import 'package:flutter/services.dart';
 
 class kategori extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold();
-=======
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -189,6 +183,5 @@ class theKategori extends StatelessWidget {
         ),
       ),
     );
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
   }
 }

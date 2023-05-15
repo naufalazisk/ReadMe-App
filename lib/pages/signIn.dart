@@ -154,12 +154,7 @@ class _signInState extends State<signIn> {
             print('Login Pressed');
             Navigator.of(context).push(
               PageRouteBuilder(
-<<<<<<< HEAD
-                pageBuilder: (context, animation, secondaryAnimation) => Home(),
-=======
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    navbar(),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
+                pageBuilder: (context, animation, secondaryAnimation) => navbar(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                   return FadeTransition(

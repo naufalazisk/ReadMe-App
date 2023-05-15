@@ -1,13 +1,9 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:project_kelompok_mobile/pages/kategori.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-=======
 import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/profile.dart';
 
@@ -89,41 +85,25 @@ class Home extends StatelessWidget {
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-<<<<<<< HEAD
                                         builder: (context) => StoryInside())),
-=======
-                                        builder: (context) => TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-<<<<<<< HEAD
                                         builder: (context) => StoryInside())),
-=======
-                                        builder: (context) => TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-<<<<<<< HEAD
                                         builder: (context) => StoryInside())),
-=======
-                                        builder: (context) => TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                 child: Trending()),
                             InkWell(
                                 onTap: () => Navigator.push(
                                     context,
                                     MaterialPageRoute(
-<<<<<<< HEAD
                                         builder: (context) => StoryInside())),
-=======
-                                        builder: (context) => TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                 child: Trending()),
                           ],
                         ),
@@ -174,11 +154,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -204,11 +180,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -244,11 +216,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -274,11 +242,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -314,11 +278,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -344,11 +304,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -384,11 +340,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -414,11 +366,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         kategori())),
-=======
-                                                        kategoriHome())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -483,77 +431,49 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                         InkWell(
                                             onTap: () => Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-<<<<<<< HEAD
                                                         StoryInside())),
-=======
-                                                        TitlePage())),
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
                                             child: Poster(image: aot)),
                                       ],
                                     ),

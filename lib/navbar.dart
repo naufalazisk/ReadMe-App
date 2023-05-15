@@ -39,7 +39,7 @@ class navbar extends StatelessWidget {
           case 0:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: home(),
+                child: Home(),
               );
             });
           case 1:
@@ -69,7 +69,7 @@ class navbar extends StatelessWidget {
           default:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: home(),
+                child: Home(),
               );
             });
         }

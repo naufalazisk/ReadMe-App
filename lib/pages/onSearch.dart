@@ -4,9 +4,6 @@ import 'package:flutter/services.dart';
 class onSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    return Scaffold();
-=======
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 50,
@@ -66,6 +63,5 @@ class onSearch extends StatelessWidget {
         ),
       ),
     );
->>>>>>> e495f01f7e0fec5944fddf73935a39b9e2d380a0
   }
 }

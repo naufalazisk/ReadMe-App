@@ -19,7 +19,7 @@ class Users with ChangeNotifier {
     DateTime datetimeNow = DateTime.now();
 
     Uri url =
-        Uri.parse("https://readme-app-5eae4-default-rtdb.firebaseio.com/");
+        Uri.parse("https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/");
     http.post(url,
         body: json.encode(
           {
@@ -31,7 +31,8 @@ class Users with ChangeNotifier {
             "userDescription": userDescription,
             "createdAt": datetimeNow.toString(),
           },
-        ));
+        ),
+        );
     _allUser.add(
       User(
         id: datetimeNow.toString(),
@@ -54,7 +55,7 @@ class Users with ChangeNotifier {
 
   void editUser(String name, String username, String email, String image,
       String userDescription, BuildContext context) {
-    Object id;
+    Object id = String;
     User selectUser = _allUser.firstWhere((element) => element.id == id);
     selectUser.name = name;
     selectUser.username = username;

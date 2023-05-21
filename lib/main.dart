@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/pages/auth_page.dart';
+import 'package:project_kelompok_mobile/providers/auth.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/stories.dart';
@@ -34,9 +36,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.purple,
-        ),
-        home: signIn());
+        // theme: ThemeData(
+        //   primarySwatch: Colors.purple,
+        // ),
+        home: LoginPage());
   }
 }

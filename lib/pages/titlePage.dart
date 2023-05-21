@@ -13,8 +13,7 @@ class TitlePage extends StatelessWidget {
   String category;
   String image;
 
-  TitlePage(this.id, this.title, this.description, this.writer, this.category, this.image,
-      {super.key});
+  TitlePage(this.id, this.title, this.description, this.writer, this.category, this.image,{super.key});
 
   @override
   Widget build(BuildContext context) {

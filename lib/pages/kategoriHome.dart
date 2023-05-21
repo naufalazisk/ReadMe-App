@@ -85,10 +85,21 @@ class theKategori extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final int id = 1;
+    final String title = 'Sample Title';
+    final String description = 'Sample Description';
+    final String writer = 'Sample Writer';
+    final String category = 'Sample Category';
+    final String image = 'sample_image.jpg';
+
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => TitlePage()));
+          context,
+          MaterialPageRoute(
+              builder: (context) =>
+                  TitlePage(id, title, description, writer, category, image)),
+        );
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 5),

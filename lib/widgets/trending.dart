@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../models/story.dart';
 import '../pages/titlePage.dart';
 import '../providers/stories.dart';

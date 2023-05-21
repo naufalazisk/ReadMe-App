@@ -1,12 +1,11 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/kategori.dart';
+import 'package:project_kelompok_mobile/pages/categoryHome.dart';
+import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
 import '../pages/titlePage.dart';
-import '../pages/categoryHome.dart';
 import '../pages/profile.dart';
 import '../providers/stories.dart';
 import '../widgets/poster.dart';
@@ -15,12 +14,11 @@ import '../widgets/trending.dart';
 class Home extends StatelessWidget {
   var faker = Faker();
 
-  home({super.key});
+  Home({super.key});
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<Stories>(context);
     final dataMain = data.allstory;
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -84,38 +82,38 @@ class Home extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      SizedBox(
-                        height: 180,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            InkWell(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TitlePage())),
-                                child: Trending()),
-                            InkWell(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TitlePage())),
-                                child: Trending()),
-                            InkWell(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TitlePage())),
-                                child: Trending()),
-                            InkWell(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TitlePage())),
-                                child: Trending()),
-                          ],
-                        ),
-                      ),
+                      // SizedBox(
+                      //   height: 180,
+                      //   child: ListView.builder(
+                      //     scrollDirection: Axis.horizontal,
+                      //     children: [
+                      //       InkWell(
+                      //           onTap: () => Navigator.push(
+                      //               context,
+                      //               MaterialPageRoute(
+                      //                   builder: (context) => TitlePage())),
+                      //           child: Trending()),
+                      //       InkWell(
+                      //           onTap: () => Navigator.push(
+                      //               context,
+                      //               MaterialPageRoute(
+                      //                   builder: (context) => TitlePage())),
+                      //           child: Trending()),
+                      //       InkWell(
+                      //           onTap: () => Navigator.push(
+                      //               context,
+                      //               MaterialPageRoute(
+                      //                   builder: (context) => TitlePage())),
+                      //           child: Trending()),
+                      //       InkWell(
+                      //           onTap: () => Navigator.push(
+                      //               context,
+                      //               MaterialPageRoute(
+                      //                   builder: (context) => TitlePage())),
+                      //           child: Trending()),
+                      //     ],
+                      //   ),
+                      // ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, left: 3),
                         child: Container(
@@ -348,7 +346,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        categoryHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -374,7 +372,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        categoryHome())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -429,63 +427,63 @@ class Home extends StatelessWidget {
                                       textAlign: TextAlign.left,
                                     ),
                                   ),
-                                  SizedBox(
-                                    height: 180,
-                                    child: ListView.builder(
-                                      scrollDirection: Axis.horizontal,
-                                      children: [
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                        InkWell(
-                                            onTap: () => Navigator.push(
-                                                context,
-                                                MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        TitlePage())),
-                                            child: Poster(image: aot)),
-                                      ],
-                                    ),
-                                  ),
+                                  // SizedBox(
+                                  //   height: 180,
+                                  //   child: ListView.builder(
+                                  //     scrollDirection: Axis.horizontal,
+                                  //     children: [
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //       InkWell(
+                                  //           onTap: () => Navigator.push(
+                                  //               context,
+                                  //               MaterialPageRoute(
+                                  //                   builder: (context) =>
+                                  //                       TitlePage())),
+                                  //           child: Poster(image: aot)),
+                                  //     ],
+                                  //   ),
+                                  // ),
                                 ],
                               ),
                             ],

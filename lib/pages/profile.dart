@@ -17,6 +17,13 @@ class _ProfilePageState extends State<ProfilePage> {
   String userDescription =
       "I spend my days crafting compelling content for a variety of clients, ranging from blog posts and articles to social media posts and marketing copy.";
 
+  final TextEditingController nameController = TextEditingController();
+  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController userDescriptionController =
+      TextEditingController();
+  final TextEditingController imageController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

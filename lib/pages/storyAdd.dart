@@ -4,8 +4,8 @@ import '../providers/addStory.dart';
 
 class AddPlayer extends StatelessWidget {
   static const routeName = "/add-story";
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController positionController = TextEditingController();
+  final TextEditingController judulController = TextEditingController();
+  final TextEditingController ringkasanController = TextEditingController();
   final TextEditingController imageController = TextEditingController();
 
   @override
@@ -13,16 +13,30 @@ class AddPlayer extends StatelessWidget {
     final players = Provider.of<Players>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text("ADD STORY"),
+        toolbarHeight: 70,
+        elevation: 2,
+        backgroundColor: Colors.white,
+        title: Padding(
+          padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+          child: Text("Add Story",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 25,
+                  fontFamily: "Montserrat",
+                  fontWeight: FontWeight.w700)),
+        ),
         actions: [
           IconButton(
-            icon: Icon(Icons.save),
+            icon: Icon(
+              Icons.save,
+              color: Colors.black,
+              size: 30,
+            ),
             onPressed: () {
               players.addPlayer(
-                nameController.text,
-                positionController.text,
+                judulController.text,
+                ringkasanController.text,
                 imageController.text,
-                
               );
               Navigator.pop(context);
             },
@@ -39,13 +53,13 @@ class AddPlayer extends StatelessWidget {
                 autofocus: true,
                 decoration: InputDecoration(labelText: "Nama Cerita"),
                 textInputAction: TextInputAction.next,
-                controller: nameController,
+                controller: judulController,
               ),
               TextFormField(
                 autocorrect: false,
                 decoration: InputDecoration(labelText: "Ringkasan"),
                 textInputAction: TextInputAction.next,
-                controller: positionController,
+                controller: ringkasanController,
               ),
               TextFormField(
                 autocorrect: false,
@@ -54,10 +68,9 @@ class AddPlayer extends StatelessWidget {
                 controller: imageController,
                 onEditingComplete: () {
                   players.addPlayer(
-                    nameController.text,
-                    positionController.text,
+                    judulController.text,
+                    ringkasanController.text,
                     imageController.text,
-                    
                   );
                   Navigator.pop(context);
                 },
@@ -69,8 +82,8 @@ class AddPlayer extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () {
                     players.addPlayer(
-                      nameController.text,
-                      positionController.text,
+                      judulController.text,
+                      ringkasanController.text,
                       imageController.text,
                     );
                     Navigator.pop(context);

@@ -29,7 +29,7 @@ class _LibraryState extends State<Library> {
                 child: Text("Library",
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
+                        fontSize: 25,
                         fontFamily: "Montserrat",
                         fontWeight: FontWeight.w700)),
               ),
@@ -45,7 +45,7 @@ class _LibraryState extends State<Library> {
             const Flexible(
               child: Padding(
                 padding: EdgeInsets.only(bottom: 10, top: 20),
-                child: Text("Favourite",
+                child: Text("All Stories",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 15,

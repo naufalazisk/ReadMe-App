@@ -15,7 +15,8 @@ class Players with ChangeNotifier {
   Player selectById(String id) =>
       _allPlayer.firstWhere((element) => element.id == id);
 
-  addPlayer(String name, String position, String image, [BuildContext? context]) async {
+  addPlayer(String name, String position, String image,
+      [BuildContext? context]) async {
     DateTime datetimeNow = DateTime.now();
 
     Uri url = Uri.parse(

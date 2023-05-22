@@ -1,19 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/auth_page.dart';
+import 'package:project_kelompok_mobile/pages/favorite.dart';
+import 'package:project_kelompok_mobile/pages/library.dart';
+import 'package:project_kelompok_mobile/providers/addStory.dart';
 import 'package:project_kelompok_mobile/providers/auth.dart';
+import 'package:project_kelompok_mobile/providers/favorites.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/stories.dart';
-import '../pages/signIn.dart';
 import '../navbar.dart';
-import 'package:project_kelompok_mobile/pages/StoryInside.dart';
-import 'package:project_kelompok_mobile/pages/home.dart';
-import 'package:project_kelompok_mobile/pages/write.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/pages/StoryInside.dart';
-import './pages/search.dart';
-import './pages/notification.dart';
-import 'package:project_kelompok_mobile/navbar.dart';
 
 void main(List<String> args) {
   runApp(MyApp());
@@ -33,12 +27,20 @@ class MyApp extends StatelessWidget {
   //       home: signIn());
   // }
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        // theme: ThemeData(
-        //   primarySwatch: Colors.purple,
-        // ),
-        home: LoginPage());
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => Auth()),
+        ChangeNotifierProvider(create: (context) => Stories()),
+        ChangeNotifierProvider(create: (context) => Players()),
+        ChangeNotifierProvider(create: (context) => Favorites())
+      ],
+      child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          // theme: ThemeData(
+          //   primarySwatch: Colors.purple,
+          // ),
+          home: navbar()),
+    );
   }
 }

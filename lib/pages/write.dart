@@ -2,7 +2,6 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/createStory.dart';
 import 'package:project_kelompok_mobile/pages/profile.dart';
-import 'package:intl/intl.dart';
 
 class write extends StatelessWidget {
   var faker = Faker();

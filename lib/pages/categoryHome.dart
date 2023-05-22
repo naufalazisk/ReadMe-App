@@ -77,7 +77,7 @@ class categoryHome extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) =>
                           ChangeNotifierProvider.value(
-                              value: dataMain[index + 14], child: category()),
+                              value: dataMain[index], child: category()),
                       itemCount: dataMain.length,
                     ),
                   )

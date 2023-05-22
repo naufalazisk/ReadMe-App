@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class FavoriteStory {
-  String id;
+class FavoriteStory with ChangeNotifier {
+  int id;
   String title;
   String description;
   String writer;

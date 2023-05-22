@@ -6,16 +6,16 @@ class Favorites with ChangeNotifier {
 
   Map<String, FavoriteStory> get items => _items;
 
-  void addFavs(String storyId, String title, String description, String writer,
+  void addFavs(int storyId, String title, String description, String writer,
       String category, String image) {
     // ketika sudah tersedia
     if (_items.containsKey(storyId)) {
       print("Sudah ada di library");
     } else {
       _items.putIfAbsent(
-          storyId,
+          storyId.toString(),
           () => FavoriteStory(
-              id: DateTime.now().toString(),
+              id: storyId,
               title: title,
               description: description,
               writer: writer,

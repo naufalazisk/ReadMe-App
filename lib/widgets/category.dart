@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_kelompok_mobile/pages/search.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
+import 'package:project_kelompok_mobile/providers/stories.dart';
 import 'package:provider/provider.dart';
-import '../pages/titlePage.dart';
 import '../models/story.dart';
-
-import '../providers/stories.dart';
 
 // 1 widget cerita pada kategori
 
@@ -22,8 +19,8 @@ class category extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => TitlePage(data.id, data.title, data.image,
-                    data.writer, data.category, data.description)));
+                builder: (context) => TitlePage(data.id, data.title,
+                    data.description, data.writer, data.category, data.image)));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 5),

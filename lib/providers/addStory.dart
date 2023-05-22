@@ -19,7 +19,7 @@ class Players with ChangeNotifier {
     DateTime datetimeNow = DateTime.now();
 
     Uri url = Uri.parse(
-        "https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/players.json");
+        "https://readme-cfafc-default-rtdb.firebaseio.com/players.json");
 
     try {
       final response = await http.post(

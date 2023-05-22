@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/categoryHome.dart';
 import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
 import 'package:project_kelompok_mobile/pages/StoryInside.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../pages/titlePage.dart';
 import '../pages/profile.dart';
@@ -31,7 +30,7 @@ class Home extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Text("Home",
                     style: TextStyle(
@@ -41,7 +40,7 @@ class Home extends StatelessWidget {
                         fontWeight: FontWeight.w700)),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,
@@ -82,38 +81,17 @@ class Home extends StatelessWidget {
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      // SizedBox(
-                      //   height: 180,
-                      //   child: ListView.builder(
-                      //     scrollDirection: Axis.horizontal,
-                      //     children: [
-                      //       InkWell(
-                      //           onTap: () => Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => TitlePage())),
-                      //           child: Trending()),
-                      //       InkWell(
-                      //           onTap: () => Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => TitlePage())),
-                      //           child: Trending()),
-                      //       InkWell(
-                      //           onTap: () => Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => TitlePage())),
-                      //           child: Trending()),
-                      //       InkWell(
-                      //           onTap: () => Navigator.push(
-                      //               context,
-                      //               MaterialPageRoute(
-                      //                   builder: (context) => TitlePage())),
-                      //           child: Trending()),
-                      //     ],
-                      //   ),
-                      // ),
+                      SizedBox(
+                          height: 180,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) =>
+                                ChangeNotifierProvider.value(
+                              value: dataMain[index],
+                              child: Trending(),
+                            ),
+                            itemCount: 4,
+                          )),
                       Padding(
                         padding: const EdgeInsets.only(top: 10, left: 3),
                         child: Container(
@@ -253,6 +231,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -264,8 +244,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -289,6 +267,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -300,8 +280,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -315,6 +293,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -326,8 +306,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -351,6 +329,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -362,8 +342,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -377,6 +355,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -388,8 +368,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -402,7 +380,7 @@ class Home extends StatelessWidget {
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Padding(
+                                  const Padding(
                                     padding:
                                         EdgeInsets.only(bottom: 10, top: 15),
                                     child: Text(
@@ -415,7 +393,7 @@ class Home extends StatelessWidget {
                                       textAlign: TextAlign.left,
                                     ),
                                   ),
-                                  Padding(
+                                  const Padding(
                                     padding: EdgeInsets.only(bottom: 10),
                                     child: Text(
                                       "Editor's handpicks favorites",
@@ -427,63 +405,17 @@ class Home extends StatelessWidget {
                                       textAlign: TextAlign.left,
                                     ),
                                   ),
-                                  // SizedBox(
-                                  //   height: 180,
-                                  //   child: ListView.builder(
-                                  //     scrollDirection: Axis.horizontal,
-                                  //     children: [
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //       InkWell(
-                                  //           onTap: () => Navigator.push(
-                                  //               context,
-                                  //               MaterialPageRoute(
-                                  //                   builder: (context) =>
-                                  //                       TitlePage())),
-                                  //           child: Poster(image: aot)),
-                                  //     ],
-                                  //   ),
-                                  // ),
+                                  SizedBox(
+                                      height: 180,
+                                      child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemBuilder: (context, index) =>
+                                            ChangeNotifierProvider.value(
+                                          value: dataMain[index + 4],
+                                          child: Poster(),
+                                        ),
+                                        itemCount: 6,
+                                      )),
                                 ],
                               ),
                             ],

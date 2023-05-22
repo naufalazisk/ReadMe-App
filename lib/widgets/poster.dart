@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../pages/titlePage.dart';
 import '../models/story.dart';
-import '../providers/stories.dart';
 
 class Poster extends StatelessWidget {
   const Poster({
@@ -20,12 +19,13 @@ class Poster extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) => TitlePage(
-                      data.id,
-                      data.title,
-                      data.image,
-                      data.writer,
-                      data.category,
-                      data.description)));
+                        data.id,
+                        data.title,
+                        data.description,
+                        data.writer,
+                        data.category,
+                        data.image,
+                      )));
         },
         child: Padding(
           padding: const EdgeInsets.only(left: 2.5, right: 2.5),

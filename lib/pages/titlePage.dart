@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-import '../models/story.dart';
-import '../providers/stories.dart';
+
+import '../providers/favorites.dart';
 
 // udah dipindah ke widgets
 class TitlePage extends StatelessWidget {
@@ -13,7 +12,9 @@ class TitlePage extends StatelessWidget {
   String category;
   String image;
 
-  TitlePage(this.id, this.title, this.description, this.writer, this.category, this.image,{super.key});
+  TitlePage(this.id, this.title, this.description, this.writer, this.category,
+      this.image,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +26,18 @@ class TitlePage extends StatelessWidget {
           backgroundColor: Colors.white,
           leading: IconButton(
             onPressed: () => Navigator.pop(context),
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
             color: Colors.black,
-            padding: EdgeInsets.only(left: 10),
+            padding: const EdgeInsets.only(left: 10),
             iconSize: 30,
           ),
           title: Padding(
             padding: const EdgeInsets.fromLTRB(0, 23, 0, 20),
             child: Padding(
-              padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
               child: Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Colors.black,
                     fontSize: 25,
                     fontFamily: "Montserrat",
@@ -69,7 +70,7 @@ class TitlePage extends StatelessWidget {
                 padding: const EdgeInsets.all(15),
                 child: Text(
                   title,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.black,
                       fontSize: 25,
                       fontWeight: FontWeight.w600,
@@ -90,7 +91,7 @@ class TitlePage extends StatelessWidget {
                     ),
                     Text(
                       writer,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.black,
                         fontSize: 15,
                         fontFamily: "Montserrat",
@@ -112,7 +113,7 @@ class TitlePage extends StatelessWidget {
                   child: Center(
                       child: Text(
                     category,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.white,
                         fontSize: 10,
                         fontWeight: FontWeight.w700,
@@ -122,25 +123,23 @@ class TitlePage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: Container(
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 365,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.black,
-                              width: 1.0,
-                              style: BorderStyle.solid,
-                            ),
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(description),
-                        ),
-                      )
-                    ],
-                  ),
+                child: Column(
+                  children: [
+                    Container(
+                      width: 365,
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.black,
+                            width: 1.0,
+                            style: BorderStyle.solid,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(description),
+                      ),
+                    )
+                  ],
                 ),
               ),
               Row(
@@ -149,13 +148,14 @@ class TitlePage extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 20, left: 20),
                     child: SizedBox(
                       height: 60,
-                      width: 300,
+                      width: 200,
                       child: FittedBox(
                         child: FloatingActionButton(
-                          backgroundColor: Color.fromARGB(255, 220, 182, 195),
+                          backgroundColor:
+                              const Color.fromARGB(255, 220, 182, 195),
                           shape: BeveledRectangleBorder(
                               borderRadius: BorderRadius.circular(5)),
-                          child: Text(
+                          child: const Text(
                             "Start Reading",
                             style: TextStyle(
                                 fontSize: 20,
@@ -173,13 +173,17 @@ class TitlePage extends StatelessWidget {
                       height: 60,
                       width: 50,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Provider.of<Favorites>(context, listen: false)
+                                .addFavs(id, title, description, writer,
+                                    category, image);
+                          },
                           style: ElevatedButton.styleFrom(
                               primary: Color.fromARGB(255, 220, 182, 195),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
-                              padding: EdgeInsets.all(10)),
-                          child: Icon(Icons.add)),
+                              padding: const EdgeInsets.all(10)),
+                          child: const Icon(Icons.add)),
                     ),
                   )
                 ],

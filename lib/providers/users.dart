@@ -18,21 +18,21 @@ class Users with ChangeNotifier {
       String userDescription, BuildContext context) {
     DateTime datetimeNow = DateTime.now();
 
-    Uri url =
-        Uri.parse("https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    http.post(url,
-        body: json.encode(
-          {
-            "id": datetimeNow.toString(),
-            "name": name,
-            "username": username,
-            "email": email,
-            "image": image,
-            "userDescription": userDescription,
-            "createdAt": datetimeNow.toString(),
-          },
-        ),
-        );
+    Uri url = Uri.parse("https://readme-cfafc-default-rtdb.firebaseio.com/");
+    http.post(
+      url,
+      body: json.encode(
+        {
+          "id": datetimeNow.toString(),
+          "name": name,
+          "username": username,
+          "email": email,
+          "image": image,
+          "userDescription": userDescription,
+          "createdAt": datetimeNow.toString(),
+        },
+      ),
+    );
     _allUser.add(
       User(
         id: datetimeNow.toString(),

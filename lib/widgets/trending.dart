@@ -18,8 +18,8 @@ class Trending extends StatelessWidget {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => TitlePage(data.id, data.title, data.image,
-                    data.writer, data.category, data.description)));
+                builder: (context) => TitlePage(data.id, data.title,
+                    data.description, data.writer, data.category, data.image)));
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 20),

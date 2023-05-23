@@ -3,20 +3,22 @@ import 'package:provider/provider.dart';
 import 'package:project_kelompok_mobile/pages/storyAdd.dart';
 import '../providers/addStory.dart';
 
-class DetailPlayer extends StatelessWidget {
+class DetailStory extends StatelessWidget {
   static const routeName = "/storyDetail";
 
   @override
   Widget build(BuildContext context) {
-    final players = Provider.of<Players>(context, listen: false);
-    final playerId = ModalRoute.of(context)?.settings.arguments as String;
-    final selectPLayer = players.selectById(playerId);
+    final stories = Provider.of<StoryLists>(context, listen: false);
+    final storyId = ModalRoute.of(context)?.settings.arguments as String;
+    final selectStory = stories.selectById(storyId);
     final TextEditingController imageController =
-        TextEditingController(text: selectPLayer.imageUrl);
-    final TextEditingController nameController =
-        TextEditingController(text: selectPLayer.name);
-    final TextEditingController positionController =
-        TextEditingController(text: selectPLayer.position);
+        TextEditingController(text: selectStory.imageUrl);
+    final TextEditingController titleController =
+        TextEditingController(text: selectStory.title);
+    final TextEditingController descriptionController =
+        TextEditingController(text: selectStory.description);
+    final TextEditingController categoryController =
+        TextEditingController(text: selectStory.categories);
     return Scaffold(
       appBar: AppBar(
         title: Text("DETAIL STORY"),
@@ -43,15 +45,21 @@ class DetailPlayer extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 autofocus: true,
-                decoration: InputDecoration(labelText: "Nama"),
+                decoration: InputDecoration(labelText: "Judul"),
                 textInputAction: TextInputAction.next,
-                controller: nameController,
+                controller: titleController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Posisi"),
+                decoration: InputDecoration(labelText: "Ringkasan"),
                 textInputAction: TextInputAction.next,
-                controller: positionController,
+                controller: descriptionController,
+              ),
+              TextFormField(
+                autocorrect: false,
+                decoration: InputDecoration(labelText: "Kategori"),
+                textInputAction: TextInputAction.next,
+                controller: categoryController,
               ),
               TextFormField(
                 autocorrect: false,
@@ -59,12 +67,12 @@ class DetailPlayer extends StatelessWidget {
                 textInputAction: TextInputAction.done,
                 controller: imageController,
                 onEditingComplete: () {
-                  players.editPlayer(
-                    playerId,
-                    nameController.text,
-                    positionController.text,
+                  stories.editStoryList(
+                    storyId,
+                    titleController.text,
+                    descriptionController.text,
+                    // categoryController.text,
                     imageController.text,
-                    
                   );
                   Navigator.pop(context);
                 },
@@ -75,12 +83,12 @@ class DetailPlayer extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: OutlinedButton(
                   onPressed: () {
-                    players.editPlayer(
-                      playerId,
-                      nameController.text,
-                      positionController.text,
+                    stories.editStoryList(
+                      storyId,
+                      titleController.text,
+                      descriptionController.text,
+                      // categoryController.text,
                       imageController.text,
-                      
                     );
                     Navigator.pop(context);
                   },

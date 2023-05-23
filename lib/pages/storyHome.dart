@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/storyAdd.dart';
@@ -11,7 +10,7 @@ import '../providers/addStory.dart';
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final allPlayerProvider = Provider.of<Players>(context);
+    final allStoryProvider = Provider.of<StoryLists>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text("ALL STORIES"),
@@ -19,12 +18,12 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.add),
             onPressed: () {
-              Navigator.pushNamed(context, AddPlayer.routeName);
+              Navigator.pushNamed(context, AddStory.routeName);
             },
           ),
         ],
       ),
-      body: (allPlayerProvider.jumlahPlayer == 0)
+      body: (allStoryProvider.jumlahStoryList == 0)
           ? Container(
               width: double.infinity,
               child: Column(
@@ -37,7 +36,7 @@ class HomePage extends StatelessWidget {
                   SizedBox(height: 20),
                   OutlinedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AddPlayer.routeName);
+                      Navigator.pushNamed(context, AddStory.routeName);
                     },
                     child: Text(
                       "Add Player",
@@ -48,32 +47,32 @@ class HomePage extends StatelessWidget {
               ),
             )
           : ListView.builder(
-              itemCount: allPlayerProvider.jumlahPlayer,
+              itemCount: allStoryProvider.jumlahStoryList,
               itemBuilder: (context, index) {
-                var id = allPlayerProvider.allPlayer[index].id;
+                var id = allStoryProvider.allStoryList[index].id;
                 return ListTile(
                   onTap: () {
                     Navigator.pushNamed(
                       context,
-                      DetailPlayer.routeName,
+                      DetailStory.routeName,
                       arguments: id,
                     );
                   },
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(
-                      allPlayerProvider.allPlayer[index].imageUrl,
+                      allStoryProvider.allStoryList[index].imageUrl,
                     ),
                   ),
                   title: Text(
-                    allPlayerProvider.allPlayer[index].name,
+                    allStoryProvider.allStoryList[index].title,
                   ),
                   subtitle: Text(
                     DateFormat.yMMMMd()
-                        .format(allPlayerProvider.allPlayer[index].createdAt),
+                        .format(allStoryProvider.allStoryList[index].createdAt),
                   ),
                   trailing: IconButton(
                     onPressed: () {
-                      allPlayerProvider.deletePlayer(id);
+                      allStoryProvider.deleteStoryList(id);
                     },
                     icon: Icon(Icons.delete),
                   ),

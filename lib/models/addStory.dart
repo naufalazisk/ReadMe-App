@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class Player {
-  String id, name, position, imageUrl;
+class StoryList {
+  String id, title, description, categories, imageUrl;
   DateTime createdAt;
 
-  Player({required this.position, required this.id, required this.imageUrl, required this.name, required this.createdAt});
+  StoryList(
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.categories,
+      required this.imageUrl,
+      required this.createdAt});
 }

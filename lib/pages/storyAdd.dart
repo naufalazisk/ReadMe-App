@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/addStory.dart';
 
-class AddPlayer extends StatelessWidget {
+class AddStory extends StatelessWidget {
   static const routeName = "/add-story";
   final TextEditingController judulController = TextEditingController();
   final TextEditingController ringkasanController = TextEditingController();
+  final TextEditingController kategoriController = TextEditingController();
   final TextEditingController imageController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    final players = Provider.of<Players>(context, listen: false);
+    final stories = Provider.of<StoryLists>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
@@ -33,9 +34,10 @@ class AddPlayer extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              players.addPlayer(
+              stories.addStoryList(
                 judulController.text,
                 ringkasanController.text,
+                kategoriController.text,
                 imageController.text,
               );
               Navigator.pop(context);
@@ -67,9 +69,10 @@ class AddPlayer extends StatelessWidget {
                 textInputAction: TextInputAction.done,
                 controller: imageController,
                 onEditingComplete: () {
-                  players.addPlayer(
+                  stories.addStoryList(
                     judulController.text,
                     ringkasanController.text,
+                    kategoriController.text,
                     imageController.text,
                   );
                   Navigator.pop(context);
@@ -81,9 +84,10 @@ class AddPlayer extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: OutlinedButton(
                   onPressed: () {
-                    players.addPlayer(
+                    stories.addStoryList(
                       judulController.text,
                       ringkasanController.text,
+                      kategoriController.text,
                       imageController.text,
                     );
                     Navigator.pop(context);

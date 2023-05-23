@@ -46,7 +46,7 @@ class navbar extends StatelessWidget {
           case 1:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: AddPlayer(),
+                child: AddStory(),
               );
             });
           case 2:

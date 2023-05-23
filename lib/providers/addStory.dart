@@ -3,43 +3,47 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
+import 'package:project_kelompok_mobile/widgets/category.dart';
 import '../models/addStory.dart';
 
-class Players with ChangeNotifier {
-  List<Player> _allPlayer = [];
+class StoryLists with ChangeNotifier {
+  List<StoryList> _allStoryList = [];
 
-  List<Player> get allPlayer => _allPlayer;
+  List<StoryList> get allStoryList => _allStoryList;
 
-  int get jumlahPlayer => _allPlayer.length;
+  int get jumlahStoryList => _allStoryList.length;
 
-  Player selectById(String id) =>
-      _allPlayer.firstWhere((element) => element.id == id);
+  StoryList selectById(String id) =>
+      _allStoryList.firstWhere((element) => element.id == id);
 
-  addPlayer(String name, String position, String image,
+  addStoryList(
+      String title, String description, String categories, String image,
       [BuildContext? context]) async {
     DateTime datetimeNow = DateTime.now();
 
     Uri url = Uri.parse(
-        "https://readme-cfafc-default-rtdb.firebaseio.com/players.json");
+        "https://readme-cfafc-default-rtdb.firebaseio.com/StoryLists.json");
 
     try {
       final response = await http.post(
         url,
         body: json.encode(
           {
-            "name": name,
-            "position": position,
+            "title": title,
+            "description": description,
+            "categories": categories,
             "imageUrl": image,
             "createdAt": datetimeNow.toString(),
           },
         ),
       );
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        _allPlayer.add(
-          Player(
-            id: json.decode(response.body)["name"].toString(),
-            name: name,
-            position: position,
+        _allStoryList.add(
+          StoryList(
+            id: json.decode(response.body)["title"].toString(),
+            title: title,
+            description: description,
+            categories: categories,
             imageUrl: image,
             createdAt: datetimeNow,
           ),
@@ -54,27 +58,28 @@ class Players with ChangeNotifier {
     }
   }
 
-  editPlayer(String id, String name, String position, String image) async {
+  editStoryList(
+      String id, String title, String description, String image) async {
     Uri url = Uri.parse(
-        "https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/players/$id.json");
+        "https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/StoryLists/$id.json");
     try {
       final response = await http.patch(
         url,
         body: json.encode(
           {
-            "name": name,
-            "position": position,
+            "title": title,
+            "description": description,
             "imageUrl": image,
           },
         ),
       );
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        Player selectPlayer =
-            _allPlayer.firstWhere((element) => element.id == id);
-        selectPlayer.name = name;
-        selectPlayer.position = position;
-        selectPlayer.imageUrl = image;
+        StoryList selectStoryList =
+            _allStoryList.firstWhere((element) => element.id == id);
+        selectStoryList.title = title;
+        selectStoryList.description = description;
+        selectStoryList.imageUrl = image;
         notifyListeners();
       } else {
         throw ("${response.statusCode}");
@@ -84,14 +89,14 @@ class Players with ChangeNotifier {
     }
   }
 
-  deletePlayer(String id) async {
+  deleteStoryList(String id) async {
     Uri url = Uri.parse(
-        "https://http-req-bec2d-default-rtdb.firebaseio.com/players/$id.json");
+        "https://http-req-bec2d-default-rtdb.firebaseio.com/StoryLists/$id.json");
 
     try {
       final response = await http.delete(url).then(
         (response) {
-          _allPlayer.removeWhere((element) => element.id == id);
+          _allStoryList.removeWhere((element) => element.id == id);
           notifyListeners();
         },
       );
@@ -106,7 +111,7 @@ class Players with ChangeNotifier {
 
   Future<void> initialData() async {
     Uri url = Uri.parse(
-        "https://http-req-bec2d-default-rtdb.firebaseio.com/players.json");
+        "https://http-req-bec2d-default-rtdb.firebaseio.com/StoryLists.json");
 
     var hasilGetData = await http.get(url);
 
@@ -117,13 +122,14 @@ class Players with ChangeNotifier {
         (key, value) {
           DateTime dateTimeParse =
               DateFormat("yyyy-mm-dd hh:mm:ss").parse(value["createdAt"]);
-          _allPlayer.add(
-            Player(
+          _allStoryList.add(
+            StoryList(
               id: key,
               createdAt: dateTimeParse,
               imageUrl: value["imageUrl"],
-              name: value["name"],
-              position: value["position"],
+              title: value["title"],
+              categories: value["categories"],
+              description: value["description"],
             ),
           );
         },

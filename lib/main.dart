@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => Auth()),
         ChangeNotifierProvider(create: (context) => Stories()),
-        ChangeNotifierProvider(create: (context) => Players()),
+        ChangeNotifierProvider(create: (context) => StoryLists()),
         ChangeNotifierProvider(create: (context) => Favorites())
       ],
       child: MaterialApp(

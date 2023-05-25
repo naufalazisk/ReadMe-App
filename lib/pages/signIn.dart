@@ -1,16 +1,84 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_kelompok_mobile/navbar.dart';
-import 'package:project_kelompok_mobile/pages/signUp.dart';
-import 'package:project_kelompok_mobile/pages/home.dart';
+import 'package:provider/provider.dart';
+
+import '../navbar.dart';
+import '../pages/signUp.dart';
+import '../pages/home.dart';
+import '../providers/authentication.dart';
 
 class signIn extends StatefulWidget {
+  signIn({super.key});
+
   @override
-  _signInState createState() => _signInState();
+  State<signIn> createState() => _signInState();
 }
 
 class _signInState extends State<signIn> {
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  bool _isHidden = true;
   bool isRememberMe = false;
+
+  void _toggleVisibility() {
+    setState(() {
+      _isHidden = !_isHidden;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final authService = Provider.of<Authentication>(context);
+
+    return Scaffold(
+        body: AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.light,
+      child: GestureDetector(
+        child: Stack(
+          children: <Widget>[
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                    Color(0x66D6C9C9),
+                    Color(0x99D6C9C9),
+                    Color(0xccD6C9C9),
+                    Color(0xffD6C9C9),
+                  ])),
+              child: SingleChildScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'Sign In',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 50),
+                    buildEmail(),
+                    SizedBox(height: 20),
+                    buildPassword(),
+                    buildForgotPassBtn(),
+                    buildRememberCb(),
+                    buildLoginBtn(context),
+                    buildSignUpBtn(context),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
+    ));
+  }
 
   Widget buildEmail() {
     return Column(
@@ -36,7 +104,7 @@ class _signInState extends State<signIn> {
               ]),
           height: 60,
           child: TextField(
-            keyboardType: TextInputType.emailAddress,
+            controller: emailController,
             style: TextStyle(color: Colors.black87),
             decoration: InputDecoration(
                 border: InputBorder.none,
@@ -77,14 +145,25 @@ class _signInState extends State<signIn> {
               ]),
           height: 60,
           child: TextField(
-            obscureText: true,
+            controller: passwordController,
+            obscureText: _isHidden,
             style: TextStyle(color: Colors.black87),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
-                prefixIcon: Icon(
-                  Icons.lock,
-                  color: Color(0xff0D6C9C9),
+                suffixIcon: InkWell(
+                  onTap: () {
+                    setState(() {
+                      _toggleVisibility();
+                    });
+                  },
+                  child: Icon(
+                    _isHidden
+                        ? Icons.visibility_off_rounded
+                        : Icons.visibility_rounded,
+                    color: Colors.amber,
+                    size: 18,
+                  ),
                 ),
                 hintText: 'Password',
                 hintStyle: TextStyle(color: Colors.black38)),
@@ -143,6 +222,7 @@ class _signInState extends State<signIn> {
   }
 
   Widget buildLoginBtn(BuildContext context) {
+    final authService = Provider.of<Authentication>(context);
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
@@ -150,22 +230,26 @@ class _signInState extends State<signIn> {
       child: Padding(
         padding: EdgeInsets.all(15),
         child: ElevatedButton(
-          onPressed: () {
-            print('Login Pressed');
-            Navigator.of(context).push(
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    navbar(),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  return FadeTransition(
-                    opacity: animation,
-                    child: child,
-                  );
-                },
-                transitionDuration: Duration(milliseconds: 700),
-              ),
-            );
+          onPressed: () async {
+            await authService.signInWithEmailAndPassword(
+                emailController.text, passwordController.text);
+            // authService.tempData();
+            // authService.getUserDetail();
+            // print('Login Pressed');
+            // Navigator.of(context).push(
+            //   PageRouteBuilder(
+            //     pageBuilder: (context, animation, secondaryAnimation) =>
+            //         navbar(),
+            //     transitionsBuilder:
+            //         (context, animation, secondaryAnimation, child) {
+            //       return FadeTransition(
+            //         opacity: animation,
+            //         child: child,
+            //       );
+            //     },
+            //     transitionDuration: Duration(milliseconds: 700),
+            //   ),
+            // );
           },
           child: Text('LOGIN'),
           style: ElevatedButton.styleFrom(
@@ -224,57 +308,5 @@ class _signInState extends State<signIn> {
         ]),
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-      value: SystemUiOverlayStyle.light,
-      child: GestureDetector(
-        child: Stack(
-          children: <Widget>[
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                    Color(0x66D6C9C9),
-                    Color(0x99D6C9C9),
-                    Color(0xccD6C9C9),
-                    Color(0xffD6C9C9),
-                  ])),
-              child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Text(
-                      'Sign In',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(height: 50),
-                    buildEmail(),
-                    SizedBox(height: 20),
-                    buildPassword(),
-                    buildForgotPassBtn(),
-                    buildRememberCb(),
-                    buildLoginBtn(context),
-                    buildSignUpBtn(context),
-                  ],
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-    ));
   }
 }

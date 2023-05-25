@@ -1,7 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/createStory.dart';
-import 'package:project_kelompok_mobile/pages/profile.dart';
+
+import '../pages/profile.dart';
+import 'addStory.dart';
 
 class write extends StatelessWidget {
   var faker = Faker();
@@ -66,7 +67,7 @@ class write extends StatelessWidget {
               ),
               InkWell(
                 onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => createStory())),
+                    MaterialPageRoute(builder: (context) => AddStory())),
                 child: const Padding(
                   padding: EdgeInsets.only(bottom: 20, top: 30, left: 5),
                   child: Text(

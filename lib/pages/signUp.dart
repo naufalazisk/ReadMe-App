@@ -1,13 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:project_kelompok_mobile/pages/signIn.dart';
+import 'package:provider/provider.dart';
+
+import '../pages/signIn.dart';
+import '../providers/authentication.dart';
 
 class signUp extends StatefulWidget {
+  signUp({super.key});
+
   @override
   _signUpState createState() => _signUpState();
 }
 
 class _signUpState extends State<signUp> {
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+  final emailController = TextEditingController();
+  final nameController = TextEditingController();
+
+  bool confirmPassword() {
+    if (passwordController == confirmPasswordController) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   Widget buildName() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +53,7 @@ class _signUpState extends State<signUp> {
               ]),
           height: 60,
           child: TextField(
-            keyboardType: TextInputType.emailAddress,
+            controller: nameController,
             style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
@@ -79,7 +97,7 @@ class _signUpState extends State<signUp> {
               ]),
           height: 60,
           child: TextField(
-            keyboardType: TextInputType.emailAddress,
+            controller: emailController,
             style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
                 border: InputBorder.none,
@@ -124,6 +142,7 @@ class _signUpState extends State<signUp> {
               ]),
           height: 60,
           child: TextField(
+            controller: passwordController,
             obscureText: true,
             style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
@@ -169,6 +188,7 @@ class _signUpState extends State<signUp> {
               ]),
           height: 60,
           child: TextField(
+            controller: confirmPasswordController,
             obscureText: true,
             style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
             decoration: InputDecoration(
@@ -188,6 +208,7 @@ class _signUpState extends State<signUp> {
   }
 
   Widget buildSignUpBtn() {
+    final authService = Provider.of<Authentication>(context);
     return Container(
       padding: EdgeInsets.symmetric(vertical: 25),
       height: 110,
@@ -195,21 +216,27 @@ class _signUpState extends State<signUp> {
       child: Padding(
         padding: EdgeInsets.only(top: 10),
         child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              PageRouteBuilder(
-                pageBuilder: (context, animation, secondaryAnimation) =>
-                    signIn(),
-                transitionsBuilder:
-                    (context, animation, secondaryAnimation, child) {
-                  return FadeTransition(
-                    opacity: animation,
-                    child: child,
-                  );
-                },
-                transitionDuration: Duration(milliseconds: 700),
-              ),
-            );
+          onPressed: () async {
+            await authService.createUserWithEmailAndPassword(
+                emailController.text,
+                passwordController.text,
+                nameController.text);
+            if (confirmPassword() == true) {}
+            Navigator.pushNamed(context, '/');
+            // Navigator.of(context).push(
+            //   PageRouteBuilder(
+            //     pageBuilder: (context, animation, secondaryAnimation) =>
+            //         signIn(),
+            //     transitionsBuilder:
+            //         (context, animation, secondaryAnimation, child) {
+            //       return FadeTransition(
+            //         opacity: animation,
+            //         child: child,
+            //       );
+            //     },
+            //     transitionDuration: Duration(milliseconds: 700),
+            //   ),
+            // );
           },
           child: Text('Sign Up'),
           style: ElevatedButton.styleFrom(
@@ -232,6 +259,7 @@ class _signUpState extends State<signUp> {
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<Authentication>(context);
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,

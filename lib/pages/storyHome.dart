@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:project_kelompok_mobile/pages/storyAdd.dart';
+import 'package:project_kelompok_mobile/pages/addStory.dart';
 import 'package:provider/provider.dart';
 
 import '../models/addStory.dart';
 import '../pages/storyDetail.dart';
-import '../providers/addStory.dart';
+import '../providers/storyAdd.dart';
 
 class HomePage extends StatelessWidget {
   @override

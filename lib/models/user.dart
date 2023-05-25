@@ -1,13 +1,11 @@
-class User {
-  String id, name, username, email, userDescription, image;
-  DateTime createdAt;
+import 'package:flutter/material.dart';
 
-  User(
-      {required this.username,
-      required this.id,
-      required this.email,
-      required this.name,
-      required this.createdAt,
-      required this.userDescription,
-      required this.image});
+class UserAttributes with ChangeNotifier {
+  String? uid;
+  String? email;
+
+  UserAttributes(
+    this.uid,
+    this.email,
+  );
 }

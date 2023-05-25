@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 
 import '../providers/favorites.dart';
 
-// udah dipindah ke widgets
+// halaman deskripsi cerita
+
 class TitlePage extends StatelessWidget {
   int id;
   String title;

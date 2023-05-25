@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+// tampilan ketia baca cerita
+
 class StoryInside extends StatelessWidget {
   StoryInside({super.key});
 

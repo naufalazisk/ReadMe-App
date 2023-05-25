@@ -21,6 +21,8 @@ class Favorites with ChangeNotifier {
               writer: writer,
               category: category,
               image: image));
+
+      notifyListeners();
     }
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/addStory.dart';
+import '../providers/storyAdd.dart';
 
 class AddStory extends StatelessWidget {
   static const routeName = "/add-story";
@@ -25,6 +25,12 @@ class AddStory extends StatelessWidget {
                   fontSize: 25,
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700)),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         actions: [
           IconButton(
@@ -62,6 +68,12 @@ class AddStory extends StatelessWidget {
                 decoration: InputDecoration(labelText: "Ringkasan"),
                 textInputAction: TextInputAction.next,
                 controller: ringkasanController,
+              ),
+              TextFormField(
+                autocorrect: false,
+                decoration: InputDecoration(labelText: "Kategori"),
+                textInputAction: TextInputAction.next,
+                controller: kategoriController,
               ),
               TextFormField(
                 autocorrect: false,

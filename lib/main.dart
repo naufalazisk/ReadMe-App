@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/favorite.dart';
-import 'package:project_kelompok_mobile/pages/library.dart';
-import 'package:project_kelompok_mobile/providers/addStory.dart';
-import 'package:project_kelompok_mobile/providers/auth.dart';
-import 'package:project_kelompok_mobile/providers/favorites.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import '../pages/favorite.dart';
+import '../pages/library.dart';
+import '../pages/signIn.dart';
+import '../pages/signUp.dart';
+import 'providers/storyAdd.dart';
+import '../providers/authentication.dart';
+import '../providers/favorites.dart';
 import '../providers/stories.dart';
 import '../navbar.dart';
+import '../wrapper.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -29,18 +35,27 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => Auth()),
+        Provider<Authentication>(
+          create: (_) => Authentication(),
+        ),
         ChangeNotifierProvider(create: (context) => Stories()),
         ChangeNotifierProvider(create: (context) => StoryLists()),
         ChangeNotifierProvider(create: (context) => Favorites())
       ],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
-          // theme: ThemeData(
-          //   primarySwatch: Colors.purple,
-          // ),
-          home: navbar()),
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        // theme: ThemeData(
+        //   primarySwatch: Colors.purple,
+        // ),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => const Wrapper(),
+          '/login': (context) => signIn(),
+          '/register': (context) => signUp(),
+        },
+        // home: navbar()
+      ),
     );
   }
 }

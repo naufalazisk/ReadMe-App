@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:project_kelompok_mobile/pages/storyAdd.dart';
-import '../providers/addStory.dart';
+import 'package:project_kelompok_mobile/pages/addStory.dart';
+import '../providers/storyAdd.dart';
 
 class DetailStory extends StatelessWidget {
   static const routeName = "/storyDetail";

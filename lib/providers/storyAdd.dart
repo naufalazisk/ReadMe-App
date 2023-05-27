@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/widgets/category.dart';
-import '../models/addStory.dart';
+import '../models/story_model.dart';
 
 class StoryLists with ChangeNotifier {
   List<StoryList> _allStoryList = [];
@@ -16,7 +16,7 @@ class StoryLists with ChangeNotifier {
   StoryList selectById(String id) =>
       _allStoryList.firstWhere((element) => element.id == id);
 
-  addStoryList(
+  void addStoryList(
       String title, String description, String categories, String image,
       [BuildContext? context]) async {
     DateTime datetimeNow = DateTime.now();
@@ -29,9 +29,11 @@ class StoryLists with ChangeNotifier {
         url,
         body: json.encode(
           {
+            "id": datetimeNow.toString(),
             "title": title,
             "description": description,
             "categories": categories,
+            "author": "aivel",
             "imageUrl": image,
             "createdAt": datetimeNow.toString(),
           },
@@ -40,14 +42,16 @@ class StoryLists with ChangeNotifier {
       if (response.statusCode >= 200 && response.statusCode < 300) {
         _allStoryList.add(
           StoryList(
-            id: json.decode(response.body)["title"].toString(),
+            id: json.decode(response.body)["name"].toString(),
             title: title,
             description: description,
             categories: categories,
+            author: "aivel",
             imageUrl: image,
             createdAt: datetimeNow,
           ),
         );
+        print(allStoryList);
 
         notifyListeners();
       } else {
@@ -58,7 +62,7 @@ class StoryLists with ChangeNotifier {
     }
   }
 
-  editStoryList(
+  void editStoryList(
       String id, String title, String description, String image) async {
     Uri url = Uri.parse(
         "https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/StoryLists/$id.json");
@@ -111,32 +115,34 @@ class StoryLists with ChangeNotifier {
 
   Future<void> initialData() async {
     Uri url = Uri.parse(
-        "https://http-req-bec2d-default-rtdb.firebaseio.com/StoryLists.json");
+        "https://readme-cfafc-default-rtdb.firebaseio.com/StoryLists.json");
 
     var hasilGetData = await http.get(url);
 
     var dataResponse = json.decode(hasilGetData.body) as Map<String, dynamic>;
+    print(dataResponse);
 
-    if (dataResponse != null) {
-      dataResponse.forEach(
-        (key, value) {
-          DateTime dateTimeParse =
-              DateFormat("yyyy-mm-dd hh:mm:ss").parse(value["createdAt"]);
-          _allStoryList.add(
-            StoryList(
-              id: key,
-              createdAt: dateTimeParse,
-              imageUrl: value["imageUrl"],
-              title: value["title"],
-              categories: value["categories"],
-              description: value["description"],
-            ),
-          );
-        },
-      );
-      print("BERHASIL MASUKAN DATA LIST");
+    _allStoryList.clear();
 
-      notifyListeners();
-    }
+    dataResponse.forEach(
+      (key, value) {
+        DateTime dateTimeParse =
+            DateFormat("yyyy-mm-dd hh:mm:ss").parse(value["createdAt"]);
+        _allStoryList.add(
+          StoryList(
+            id: key,
+            createdAt: dateTimeParse,
+            imageUrl: value["imageUrl"],
+            author: value["author"],
+            title: value["title"],
+            categories: value["categories"],
+            description: value["description"],
+          ),
+        );
+      },
+    );
+    print("BERHASIL MASUKAN DATA LIST");
+
+    notifyListeners();
   }
 }

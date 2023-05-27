@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Story with ChangeNotifier {
-  int id;
+  String id;
   String title;
   String description;
   String writer;

@@ -6,7 +6,7 @@ class Favorites with ChangeNotifier {
 
   Map<String, FavoriteStory> get items => _items;
 
-  void addFavs(int storyId, String title, String description, String writer,
+  void addFavs(String storyId, String title, String description, String writer,
       String category, String image) {
     // ketika sudah tersedia
     if (_items.containsKey(storyId)) {
@@ -24,5 +24,10 @@ class Favorites with ChangeNotifier {
 
       notifyListeners();
     }
+  }
+
+  void removeFavs(String storyId) {
+    _items.remove(storyId);
+    notifyListeners();
   }
 }

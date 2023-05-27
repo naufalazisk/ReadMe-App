@@ -6,7 +6,7 @@ import '../providers/favorites.dart';
 // halaman deskripsi cerita
 
 class TitlePage extends StatelessWidget {
-  int id;
+  String id;
   String title;
   String description;
   String writer;
@@ -134,7 +134,8 @@ class TitlePage extends StatelessWidget {
                             width: 1.0,
                             style: BorderStyle.solid,
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(5))),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5))),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(description),
@@ -180,7 +181,7 @@ class TitlePage extends StatelessWidget {
                                     category, image);
                           },
                           style: ElevatedButton.styleFrom(
-                              primary: Color.fromARGB(255, 220, 182, 195),
+                              primary: const Color.fromARGB(255, 220, 182, 195),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5)),
                               padding: const EdgeInsets.all(10)),

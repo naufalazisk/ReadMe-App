@@ -16,7 +16,7 @@ class StoryInside extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {},
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
         title: Padding(
           padding: const EdgeInsets.fromLTRB(0, 23, 10, 20),
@@ -38,7 +38,7 @@ class StoryInside extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Color.fromARGB(255, 220, 182, 195),
+        selectedItemColor: const Color.fromARGB(255, 220, 182, 195),
         unselectedItemColor: Colors.black12,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(

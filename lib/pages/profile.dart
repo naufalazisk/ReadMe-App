@@ -28,8 +28,8 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffD6C9C9),
-        title: Text("Profile"),
+        backgroundColor: const Color(0xffD6C9C9),
+        title: const Text("Profile"),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
@@ -49,34 +49,34 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.grey[300],
-                    backgroundImage: NetworkImage(
+                    backgroundImage: const NetworkImage(
                       "https://picsum.photos/id/237/200/300",
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Text(
                     name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     username,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Text(
                     email,
                     style: TextStyle(
@@ -84,13 +84,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Colors.grey[600],
                     ),
                   ),
-                  SizedBox(height: 16),
-                  Divider(),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
+                  const Divider(),
+                  const SizedBox(height: 16),
                   Text(
                     userDescription,
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                     ),
@@ -99,10 +99,10 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.only(bottom: 15),
                     child: Text(
                       "Works by johndoe",
@@ -164,11 +164,11 @@ class _ProfilePageState extends State<ProfilePage> {
                   //     ],
                   //   ),
                   // ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
-                          Color.fromARGB(255, 194, 151, 151)),
+                          const Color.fromARGB(255, 194, 151, 151)),
                       overlayColor:
                           MaterialStateProperty.all(Colors.orangeAccent),
                       shape: MaterialStateProperty.all(
@@ -177,7 +177,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                     ),
-                    child: Text(
+                    child: const Text(
                       "Edit Profile",
                       style: TextStyle(
                         fontSize: 16,

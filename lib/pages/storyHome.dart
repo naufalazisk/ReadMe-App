@@ -3,7 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/addStory.dart';
 import 'package:provider/provider.dart';
 
-import '../models/addStory.dart';
+import '../models/story_model.dart';
 import '../pages/storyDetail.dart';
 import '../providers/storyAdd.dart';
 
@@ -13,10 +13,10 @@ class HomePage extends StatelessWidget {
     final allStoryProvider = Provider.of<StoryLists>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("ALL STORIES"),
+        title: const Text("ALL STORIES"),
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () {
               Navigator.pushNamed(context, AddStory.routeName);
             },
@@ -29,16 +29,16 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
+                  const Text(
                     "No Data",
                     style: TextStyle(fontSize: 25),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   OutlinedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, AddStory.routeName);
                     },
-                    child: Text(
+                    child: const Text(
                       "Add Player",
                       style: TextStyle(fontSize: 20),
                     ),
@@ -74,7 +74,7 @@ class HomePage extends StatelessWidget {
                     onPressed: () {
                       allStoryProvider.deleteStoryList(id);
                     },
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                   ),
                 );
               },

@@ -21,7 +21,7 @@ class DetailStory extends StatelessWidget {
         TextEditingController(text: selectStory.categories);
     return Scaffold(
       appBar: AppBar(
-        title: Text("DETAIL STORY"),
+        title: const Text("DETAIL STORY"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -34,7 +34,7 @@ class DetailStory extends StatelessWidget {
                   width: 150,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 101, 139, 255),
+                    color: const Color.fromARGB(255, 101, 139, 255),
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage(imageController.text),
@@ -45,25 +45,25 @@ class DetailStory extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 autofocus: true,
-                decoration: InputDecoration(labelText: "Judul"),
+                decoration: const InputDecoration(labelText: "Judul"),
                 textInputAction: TextInputAction.next,
                 controller: titleController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Ringkasan"),
+                decoration: const InputDecoration(labelText: "Ringkasan"),
                 textInputAction: TextInputAction.next,
                 controller: descriptionController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Kategori"),
+                decoration: const InputDecoration(labelText: "Kategori"),
                 textInputAction: TextInputAction.next,
                 controller: categoryController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Image URL"),
+                decoration: const InputDecoration(labelText: "Image URL"),
                 textInputAction: TextInputAction.done,
                 controller: imageController,
                 onEditingComplete: () {
@@ -77,7 +77,7 @@ class DetailStory extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Container(
                 width: double.infinity,
                 alignment: Alignment.centerRight,
@@ -92,7 +92,7 @@ class DetailStory extends StatelessWidget {
                     );
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     "Edit",
                     style: TextStyle(
                       fontSize: 18,

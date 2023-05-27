@@ -5,7 +5,7 @@ import 'package:faker/faker.dart';
 class Stories with ChangeNotifier {
   List<Story> _allstory = List.generate(100, (index) {
     return Story(
-        index,
+        index.toString(),
         Faker().person.lastName(), //title
         Faker().lorem.sentence(), //desc
         Faker().person.firstName(), //writer

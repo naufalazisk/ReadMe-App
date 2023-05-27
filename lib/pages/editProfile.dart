@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/home.dart';
 
 class EditProfile extends StatefulWidget {
   final String name;
@@ -44,18 +43,18 @@ class _EditProfileState extends State<EditProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffD6C9C9),
-        title: Text("Edit Profile"),
+        backgroundColor: const Color(0xffD6C9C9),
+        title: const Text("Edit Profile"),
       ),
       body: SingleChildScrollView(
         child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Form(
             key: _formKey,
             child: Column(
               children: [
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Name",
                   ),
                   initialValue: name,
@@ -71,9 +70,9 @@ class _EditProfileState extends State<EditProfile> {
                     });
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Email",
                   ),
                   initialValue: email,
@@ -92,10 +91,10 @@ class _EditProfileState extends State<EditProfile> {
                     });
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "Password",
                   ),
                   onChanged: (value) {
@@ -104,10 +103,10 @@ class _EditProfileState extends State<EditProfile> {
                     });
                   },
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 TextFormField(
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     labelText: "New Password",
                   ),
                   onChanged: (value) {
@@ -116,11 +115,11 @@ class _EditProfileState extends State<EditProfile> {
                     });
                   },
                 ),
-                SizedBox(height: 32),
+                const SizedBox(height: 32),
                 ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        Color.fromARGB(255, 194, 151, 151)),
+                        const Color.fromARGB(255, 194, 151, 151)),
                     overlayColor:
                         MaterialStateProperty.all(Colors.orangeAccent),
                     shape: MaterialStateProperty.all(
@@ -129,14 +128,14 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                     ),
                   ),
-                  child: Text(
+                  onPressed: _saveChanges,
+                  child: const Text(
                     "Save Changes",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
                     ),
                   ),
-                  onPressed: _saveChanges,
                 ),
               ],
             ),

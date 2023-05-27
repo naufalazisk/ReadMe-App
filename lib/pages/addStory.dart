@@ -17,7 +17,7 @@ class AddStory extends StatelessWidget {
         toolbarHeight: 70,
         elevation: 2,
         backgroundColor: Colors.white,
-        title: Padding(
+        title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
           child: Text("Add Story",
               style: TextStyle(
@@ -27,14 +27,14 @@ class AddStory extends StatelessWidget {
                   fontWeight: FontWeight.w700)),
         ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.save,
               color: Colors.black,
               size: 30,
@@ -59,25 +59,25 @@ class AddStory extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 autofocus: true,
-                decoration: InputDecoration(labelText: "Nama Cerita"),
+                decoration: const InputDecoration(labelText: "Nama Cerita"),
                 textInputAction: TextInputAction.next,
                 controller: judulController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Ringkasan"),
+                decoration: const InputDecoration(labelText: "Ringkasan"),
                 textInputAction: TextInputAction.next,
                 controller: ringkasanController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Kategori"),
+                decoration: const InputDecoration(labelText: "Kategori"),
                 textInputAction: TextInputAction.next,
                 controller: kategoriController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: InputDecoration(labelText: "Image URL"),
+                decoration: const InputDecoration(labelText: "Image URL"),
                 textInputAction: TextInputAction.done,
                 controller: imageController,
                 onEditingComplete: () {
@@ -90,7 +90,7 @@ class AddStory extends StatelessWidget {
                   Navigator.pop(context);
                 },
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Container(
                 width: double.infinity,
                 alignment: Alignment.centerRight,
@@ -104,7 +104,7 @@ class AddStory extends StatelessWidget {
                     );
                     Navigator.pop(context);
                   },
-                  child: Text(
+                  child: const Text(
                     "Submit",
                     style: TextStyle(
                       fontSize: 18,

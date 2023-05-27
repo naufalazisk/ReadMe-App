@@ -5,6 +5,7 @@ import '../providers/authentication.dart';
 import '../models/user.dart';
 import '../pages/signIn.dart';
 import '../pages/home.dart';
+import '../navbar.dart';
 
 class Wrapper extends StatelessWidget {
   const Wrapper({super.key});
@@ -17,7 +18,7 @@ class Wrapper extends StatelessWidget {
       builder: (_, AsyncSnapshot<UserAttributes?> snapshot) {
         if (snapshot.connectionState == ConnectionState.active) {
           final UserAttributes? user = snapshot.data;
-          return user == null ? signIn() : Home();
+          return user == null ? signIn() : navbar();
         } else {
           return const Scaffold(
             body: Center(

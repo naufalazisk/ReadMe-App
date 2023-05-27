@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-
-import '../pages/titlePage.dart';
 
 // Ini digunakan untuk membuat cerita setelah memasukkan deskripsi dll
 
@@ -18,7 +15,7 @@ class AddPart extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
             size: 35,
@@ -41,9 +38,9 @@ class AddPart extends StatelessWidget {
             ],
           ),
         ),
-        actions: <Widget>[
+        actions: const <Widget>[
           Padding(
-            padding: const EdgeInsets.fromLTRB(0, 25, 15, 0),
+            padding: EdgeInsets.fromLTRB(0, 25, 15, 0),
             child: InkWell(
               // onTap: () => Navigator.push(context,
               //     MaterialPageRoute(builder: (context) => TitlePage())),
@@ -65,16 +62,16 @@ class AddPart extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   border: Border(
                     bottom: BorderSide(color: Colors.black),
                   )),
-              child: Padding(
-                padding: const EdgeInsets.only(top: 10, bottom: 20),
+              child: const Padding(
+                padding: EdgeInsets.only(top: 10, bottom: 20),
                 child: SizedBox(
                   width: 400,
-                  child: const TextField(
+                  child: TextField(
                     minLines: 1,
                     maxLines: 5,
                     textAlign: TextAlign.center,
@@ -89,8 +86,8 @@ class AddPart extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 10),
+            const Padding(
+              padding: EdgeInsets.only(top: 10),
               child: SizedBox(
                 width: 400,
                 child: TextField(

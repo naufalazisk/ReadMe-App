@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
-import 'package:project_kelompok_mobile/pages/search.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
 
 class kategoriHome extends StatelessWidget {
@@ -19,7 +17,7 @@ class kategoriHome extends StatelessWidget {
               pageBuilder: (context, animation, secondaryAnimation) => Home(),
             ));
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
             size: 35,
@@ -51,8 +49,8 @@ class kategoriHome extends StatelessWidget {
             Flexible(
               child: ListView(
                 scrollDirection: Axis.vertical,
-                children: [
-                  const Padding(
+                children: const [
+                  Padding(
                     padding: EdgeInsets.only(bottom: 10, top: 20),
                     child: Text("All Stories",
                         style: TextStyle(
@@ -61,13 +59,13 @@ class kategoriHome extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                             fontFamily: "Montserrat")),
                   ),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
-                  const theKategori(),
+                  theKategori(),
+                  theKategori(),
+                  theKategori(),
+                  theKategori(),
+                  theKategori(),
+                  theKategori(),
+                  theKategori(),
                 ],
               ),
             )
@@ -85,7 +83,7 @@ class theKategori extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final int id = 1;
+    final String id = "1";
     final String title = 'Sample Title';
     final String description = 'Sample Description';
     final String writer = 'Sample Writer';

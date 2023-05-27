@@ -20,7 +20,7 @@ class notification extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
+              const Padding(
                 padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                 child: Text("Notification",
                     style: TextStyle(
@@ -30,13 +30,13 @@ class notification extends StatelessWidget {
                         fontWeight: FontWeight.w700)),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 20,
                     backgroundImage:
                         NetworkImage("https://picsum.photos/130/130"),

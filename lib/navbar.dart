@@ -4,7 +4,6 @@ import 'package:project_kelompok_mobile/pages/home.dart';
 import 'package:project_kelompok_mobile/pages/library.dart';
 import 'package:project_kelompok_mobile/pages/notification.dart';
 import 'package:project_kelompok_mobile/pages/search.dart';
-import 'package:project_kelompok_mobile/pages/addStory.dart';
 import 'package:project_kelompok_mobile/pages/write.dart';
 
 class navbar extends StatelessWidget {

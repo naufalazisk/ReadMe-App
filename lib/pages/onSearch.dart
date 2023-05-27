@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class onSearch extends StatelessWidget {
   @override
@@ -8,7 +7,7 @@ class onSearch extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 50,
         elevation: 2,
-        backgroundColor: Color(0xffD6C9C9),
+        backgroundColor: const Color(0xffD6C9C9),
         title: Padding(
           padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
           child: Row(
@@ -31,25 +30,25 @@ class onSearch extends StatelessWidget {
         ),
         // kurang tulisan cancel navigator.pop ke write
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(90),
+          preferredSize: const Size.fromHeight(90),
           child: Container(
-            margin: EdgeInsets.only(left: 25, bottom: 20, right: 25),
+            margin: const EdgeInsets.only(left: 25, bottom: 20, right: 25),
             alignment: FractionalOffset.topCenter,
             height: 55,
             width: 360,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 5,
                   blurRadius: 7,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 ),
               ],
             ),
-            child: TextField(
+            child: const TextField(
               textAlign: TextAlign.left,
               style: TextStyle(color: Colors.black87),
               decoration: InputDecoration(

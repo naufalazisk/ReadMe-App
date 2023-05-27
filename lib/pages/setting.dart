@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/signIn.dart';
+import 'package:project_kelompok_mobile/providers/authentication.dart';
+import 'package:provider/provider.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -99,12 +100,14 @@ class Setting extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
+                            Provider.of<Authentication>(context, listen: false)
+                                .signOut();
                             Navigator.of(context)
                                 .popUntil((route) => route.isFirst);
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => signIn()));
+                            // Navigator.pushReplacement(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => signIn()));
                           },
                           child: const Text('Log Out',
                               style: TextStyle(fontFamily: 'Montserrat')),

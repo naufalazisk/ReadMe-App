@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import '../pages/signIn.dart';
 import '../providers/authentication.dart';
 
 class signUp extends StatefulWidget {
@@ -30,7 +28,7 @@ class _signUpState extends State<signUp> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Name',
           style: TextStyle(
               color: Colors.white,
@@ -38,13 +36,13 @@ class _signUpState extends State<signUp> {
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat"),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(5),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -54,8 +52,9 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             controller: nameController,
-            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
-            decoration: InputDecoration(
+            style: const TextStyle(
+                color: Colors.black87, fontFamily: "Montserrat"),
+            decoration: const InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
@@ -74,7 +73,7 @@ class _signUpState extends State<signUp> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Email',
           style: TextStyle(
               color: Colors.white,
@@ -82,13 +81,13 @@ class _signUpState extends State<signUp> {
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat"),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(5),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -98,8 +97,9 @@ class _signUpState extends State<signUp> {
           height: 60,
           child: TextField(
             controller: emailController,
-            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
-            decoration: InputDecoration(
+            style: const TextStyle(
+                color: Colors.black87, fontFamily: "Montserrat"),
+            decoration: const InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
@@ -119,7 +119,7 @@ class _signUpState extends State<signUp> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Password',
           style: TextStyle(
               color: Colors.white,
@@ -127,13 +127,13 @@ class _signUpState extends State<signUp> {
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat"),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(5),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -144,8 +144,9 @@ class _signUpState extends State<signUp> {
           child: TextField(
             controller: passwordController,
             obscureText: true,
-            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
-            decoration: InputDecoration(
+            style: const TextStyle(
+                color: Colors.black87, fontFamily: "Montserrat"),
+            decoration: const InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
@@ -165,7 +166,7 @@ class _signUpState extends State<signUp> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Confirm Password',
           style: TextStyle(
               color: Colors.white,
@@ -173,13 +174,13 @@ class _signUpState extends State<signUp> {
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat"),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(5),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -190,8 +191,9 @@ class _signUpState extends State<signUp> {
           child: TextField(
             controller: confirmPasswordController,
             obscureText: true,
-            style: TextStyle(color: Colors.black87, fontFamily: "Montserrat"),
-            decoration: InputDecoration(
+            style: const TextStyle(
+                color: Colors.black87, fontFamily: "Montserrat"),
+            decoration: const InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.only(top: 14),
                 prefixIcon: Icon(
@@ -210,11 +212,11 @@ class _signUpState extends State<signUp> {
   Widget buildSignUpBtn() {
     final authService = Provider.of<Authentication>(context);
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25),
+      padding: const EdgeInsets.symmetric(vertical: 25),
       height: 110,
       width: double.infinity,
       child: Padding(
-        padding: EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 10),
         child: ElevatedButton(
           onPressed: () async {
             await authService.createUserWithEmailAndPassword(
@@ -238,15 +240,15 @@ class _signUpState extends State<signUp> {
             //   ),
             // );
           },
-          child: Text('Sign Up'),
+          child: const Text('Sign Up'),
           style: ElevatedButton.styleFrom(
             elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             primary: Colors.white,
-            onPrimary: Color(0xffD6C9C9),
-            textStyle: TextStyle(
+            onPrimary: const Color(0xffD6C9C9),
+            textStyle: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               fontFamily: "Montserrat",
@@ -269,7 +271,7 @@ class _signUpState extends State<signUp> {
             Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -280,25 +282,26 @@ class _signUpState extends State<signUp> {
                     Color(0xffD6C9C9),
                   ])),
               child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 120),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Sign Up',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     buildName(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     buildEmail(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     buildPassword(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     buildConfirmPassword(),
                     buildSignUpBtn(),
                   ],

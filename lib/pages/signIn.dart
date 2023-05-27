@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-
-import '../navbar.dart';
 import '../pages/signUp.dart';
-import '../pages/home.dart';
 import '../providers/authentication.dart';
 
 class signIn extends StatefulWidget {
@@ -39,7 +36,7 @@ class _signInState extends State<signIn> {
             Container(
               height: double.infinity,
               width: double.infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
@@ -50,21 +47,22 @@ class _signInState extends State<signIn> {
                     Color(0xffD6C9C9),
                   ])),
               child: SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                padding: EdgeInsets.symmetric(horizontal: 25, vertical: 120),
+                physics: const AlwaysScrollableScrollPhysics(),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 120),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text(
+                    const Text(
                       'Sign In',
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
                           fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     buildEmail(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     buildPassword(),
                     buildForgotPassBtn(),
                     buildRememberCb(),
@@ -84,18 +82,18 @@ class _signInState extends State<signIn> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Email',
           style: TextStyle(
               color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -105,11 +103,11 @@ class _signInState extends State<signIn> {
           height: 60,
           child: TextField(
             controller: emailController,
-            style: TextStyle(color: Colors.black87),
-            decoration: InputDecoration(
+            style: const TextStyle(color: Colors.black87),
+            decoration: const InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
-                prefixIcon: Icon(
+                contentPadding: EdgeInsets.only(top: 14, left: 14),
+                suffixIcon: Icon(
                   Icons.email,
                   color: Color(0xff0D6C9C9),
                 ),
@@ -125,18 +123,18 @@ class _signInState extends State<signIn> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(
+        const Text(
           'Password',
           style: TextStyle(
               color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           alignment: Alignment.centerLeft,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black26,
                   blurRadius: 6,
@@ -147,10 +145,10 @@ class _signInState extends State<signIn> {
           child: TextField(
             controller: passwordController,
             obscureText: _isHidden,
-            style: TextStyle(color: Colors.black87),
+            style: const TextStyle(color: Colors.black87),
             decoration: InputDecoration(
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 14),
+                contentPadding: const EdgeInsets.only(top: 14, left: 14),
                 suffixIcon: InkWell(
                   onTap: () {
                     setState(() {
@@ -166,7 +164,7 @@ class _signInState extends State<signIn> {
                   ),
                 ),
                 hintText: 'Password',
-                hintStyle: TextStyle(color: Colors.black38)),
+                hintStyle: const TextStyle(color: Colors.black38)),
           ),
         )
       ],
@@ -182,7 +180,7 @@ class _signInState extends State<signIn> {
             onPressed: () {
               print("Forgot Password Pressed");
             },
-            child: Text(
+            child: const Text(
               "Forgot Password?",
               style: TextStyle(
                 color: Colors.white,
@@ -202,7 +200,7 @@ class _signInState extends State<signIn> {
           Theme(
             data: ThemeData(unselectedWidgetColor: Colors.white),
             child: Checkbox(
-              value: isRememberMe ?? false,
+              value: isRememberMe,
               checkColor: Colors.green,
               activeColor: Colors.white,
               onChanged: (value) {
@@ -212,7 +210,7 @@ class _signInState extends State<signIn> {
               },
             ),
           ),
-          Text(
+          const Text(
             'Remember me',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           )
@@ -224,11 +222,11 @@ class _signInState extends State<signIn> {
   Widget buildLoginBtn(BuildContext context) {
     final authService = Provider.of<Authentication>(context);
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 25),
+      padding: const EdgeInsets.symmetric(vertical: 25),
       width: double.infinity,
       height: 125,
       child: Padding(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         child: ElevatedButton(
           onPressed: () async {
             await authService.signInWithEmailAndPassword(
@@ -251,15 +249,15 @@ class _signInState extends State<signIn> {
             //   ),
             // );
           },
-          child: Text('LOGIN'),
+          child: const Text('LOGIN'),
           style: ElevatedButton.styleFrom(
             elevation: 5,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
             ),
             primary: Colors.white,
-            onPrimary: Color(0xffD6C9C9),
-            textStyle: TextStyle(
+            onPrimary: const Color(0xffD6C9C9),
+            textStyle: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
@@ -283,12 +281,12 @@ class _signInState extends State<signIn> {
                 child: child,
               );
             },
-            transitionDuration: Duration(milliseconds: 700),
+            transitionDuration: const Duration(milliseconds: 700),
           ),
         );
       },
       child: RichText(
-        text: TextSpan(children: [
+        text: const TextSpan(children: [
           TextSpan(
             text: 'Don\'t have an Account? ',
             style: TextStyle(

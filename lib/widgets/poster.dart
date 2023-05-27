@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/models/story_model.dart';
 import 'package:provider/provider.dart';
-
 import '../pages/titlePage.dart';
-import '../models/story.dart';
 
 class Poster extends StatelessWidget {
   const Poster({
@@ -11,7 +10,7 @@ class Poster extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<Story>(context);
+    final data = Provider.of<StoryList>(context);
 
     return InkWell(
         onTap: () {
@@ -22,9 +21,9 @@ class Poster extends StatelessWidget {
                         data.id,
                         data.title,
                         data.description,
-                        data.writer,
-                        data.category,
-                        data.image,
+                        data.author,
+                        data.categories,
+                        data.imageUrl,
                       )));
         },
         child: Padding(
@@ -36,7 +35,7 @@ class Poster extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(15),
               child: Image(
-                image: NetworkImage(data.image),
+                image: NetworkImage(data.imageUrl),
                 width: 120,
                 height: 180,
                 fit: BoxFit.fill,

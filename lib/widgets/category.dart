@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:project_kelompok_mobile/models/story_model.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/providers/stories.dart';
+import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
 import '../models/story.dart';
 
 // 1 widget cerita pada kategori
 
-class category extends StatelessWidget {
-  const category({super.key});
+class Category extends StatelessWidget {
+  const Category({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<Story>(context);
+    final data = Provider.of<StoryList>(context);
 
     return InkWell(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => TitlePage(data.id, data.title,
-                    data.description, data.writer, data.category, data.image)));
+                builder: (context) => TitlePage(
+                    data.id,
+                    data.title,
+                    data.description,
+                    data.author,
+                    data.categories,
+                    data.imageUrl)));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 5),
@@ -34,7 +39,7 @@ class category extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image(
-                  image: NetworkImage(data.image),
+                  image: NetworkImage(data.imageUrl),
                   width: 90,
                   height: 200,
                   fit: BoxFit.cover,
@@ -47,13 +52,13 @@ class category extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(top: 0, bottom: 1),
+                      padding: const EdgeInsets.only(top: 0, bottom: 1),
                       child: SizedBox(
                         width: 250,
                         child: Text(data.title,
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 color: Colors.black,
                                 fontSize: 17,
                                 fontWeight: FontWeight.w700,
@@ -62,9 +67,9 @@ class category extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 0),
-                      child: Text(data.writer,
-                          style: TextStyle(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: Text(data.author,
+                          style: const TextStyle(
                               color: Colors.pink,
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
@@ -76,7 +81,7 @@ class category extends StatelessWidget {
                         data.description,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black,
                             height: 1.5,
                             fontSize: 10,
@@ -97,8 +102,8 @@ class category extends StatelessWidget {
                                 color: Colors.black),
                             child: Center(
                                 child: Text(
-                              data.category,
-                              style: TextStyle(
+                              data.categories,
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
                                   fontWeight: FontWeight.w700,

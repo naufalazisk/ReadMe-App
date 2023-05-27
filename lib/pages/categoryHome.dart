@@ -1,23 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:faker/faker.dart';
-
-import '../pages/search.dart';
-import '../pages/titlePage.dart';
-import '../providers/stories.dart';
+import '../providers/storyAdd.dart';
 import '../widgets/category.dart';
 
 // udah dipindah ke widgets kategori
-class categoryHome extends StatelessWidget {
+class CategoryList extends StatelessWidget {
   var faker = Faker();
 
-  categoryHome({super.key});
+  CategoryList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<Stories>(context);
-    final dataMain = data.allstory;
+    final data = Provider.of<StoryLists>(context);
+    final dataMain = data.allStoryList;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -29,7 +25,7 @@ class categoryHome extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.black,
             size: 35,
@@ -74,11 +70,11 @@ class categoryHome extends StatelessWidget {
                   SizedBox(
                     height: 150,
                     child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
+                      scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) =>
                           ChangeNotifierProvider.value(
-                              value: dataMain[index], child: category()),
-                      itemCount: dataMain.length,
+                              value: dataMain[index], child: const Category()),
+                      itemCount: data.jumlahStoryList,
                     ),
                   )
                 ],

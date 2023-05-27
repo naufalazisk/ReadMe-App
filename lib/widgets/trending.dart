@@ -41,21 +41,21 @@ class Trending extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.fromLTRB(3, 10, 0, 5),
+                padding: const EdgeInsets.fromLTRB(3, 10, 0, 5),
                 child: Text(data.title,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 14,
                         fontWeight: FontWeight.w700,
                         fontFamily: "Montserrat")),
               ),
               Padding(
-                  padding: EdgeInsets.fromLTRB(3, 2, 4, 0),
+                  padding: const EdgeInsets.fromLTRB(3, 2, 4, 0),
                   child: SizedBox(
                     width: 250,
                     child: Text(
                       data.description,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.black,
                           fontSize: 12,
                           fontFamily: "Montserrat"),

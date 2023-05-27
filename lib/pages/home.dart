@@ -2,9 +2,8 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/categoryHome.dart';
 import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
-import 'package:project_kelompok_mobile/pages/StoryInside.dart';
+import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
-import '../pages/titlePage.dart';
 import '../pages/profile.dart';
 import '../providers/stories.dart';
 import '../widgets/poster.dart';
@@ -18,6 +17,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = Provider.of<Stories>(context);
     final dataMain = data.allstory;
+
+    final realData = Provider.of<StoryLists>(context);
+    final realDataMain = realData.allStoryList;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -46,7 +48,7 @@ class Home extends StatelessWidget {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 20,
                     backgroundImage:
                         NetworkImage("https://picsum.photos/130/130"),
@@ -88,7 +90,7 @@ class Home extends StatelessWidget {
                             itemBuilder: (context, index) =>
                                 ChangeNotifierProvider.value(
                               value: dataMain[index],
-                              child: Trending(),
+                              child: const Trending(),
                             ),
                             itemCount: 4,
                           )),
@@ -106,14 +108,14 @@ class Home extends StatelessWidget {
                                       width: 1.0,
                                       style: BorderStyle.solid,
                                     ),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(5))),
                                 child: Column(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Padding(
+                                    const Padding(
                                       padding:
                                           EdgeInsets.fromLTRB(10, 10, 0, 5),
                                       child: Text(
@@ -143,6 +145,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -154,8 +158,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -169,6 +171,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -180,8 +184,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -205,6 +207,8 @@ class Home extends StatelessWidget {
                                               width: 174,
                                               height: 40,
                                               child: Card(
+                                                color: Color.fromARGB(
+                                                    255, 230, 214, 220),
                                                 child: Padding(
                                                   padding: EdgeInsets.all(8.0),
                                                   child: Text(
@@ -216,8 +220,6 @@ class Home extends StatelessWidget {
                                                     textAlign: TextAlign.left,
                                                   ),
                                                 ),
-                                                color: Color.fromARGB(
-                                                    255, 230, 214, 220),
                                               ),
                                             ),
                                           ),
@@ -324,7 +326,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        categoryHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -350,7 +352,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        categoryHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -411,10 +413,10 @@ class Home extends StatelessWidget {
                                         scrollDirection: Axis.horizontal,
                                         itemBuilder: (context, index) =>
                                             ChangeNotifierProvider.value(
-                                          value: dataMain[index + 4],
-                                          child: Poster(),
+                                          value: realDataMain[index],
+                                          child: const Poster(),
                                         ),
-                                        itemCount: 6,
+                                        itemCount: realDataMain.length,
                                       )),
                                 ],
                               ),

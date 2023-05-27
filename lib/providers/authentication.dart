@@ -36,7 +36,7 @@ class Authentication with ChangeNotifier {
     return _userFromFirebase(credential.user);
   }
 
-  Future<void> singOut() async {
+  Future<void> signOut() async {
     return await _firebaseAuth.signOut();
   }
 }

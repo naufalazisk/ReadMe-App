@@ -1,5 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/pages/editlist_page.dart';
 
 import '../pages/profile.dart';
 import 'addStory.dart';
@@ -22,7 +23,7 @@ class write extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Text("Write",
                       style: TextStyle(
@@ -32,7 +33,7 @@ class write extends StatelessWidget {
                           fontWeight: FontWeight.w700)),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -40,7 +41,7 @@ class write extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => ProfilePage()));
                     },
-                    child: CircleAvatar(
+                    child: const CircleAvatar(
                       radius: 20,
                       backgroundImage:
                           NetworkImage("https://picsum.photos/130/130"),
@@ -53,32 +54,64 @@ class write extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            // ignore: prefer_const_literals_to_create_immutables
+          child: Column(
             children: [
-              Padding(
-                padding: EdgeInsets.only(bottom: 20, top: 20),
-                child: Icon(
-                  Icons.document_scanner_rounded,
-                  color: Colors.black,
-                  size: 40,
+              InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AddStory())),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20, top: 20),
+                      child: Icon(
+                        Icons.document_scanner_rounded,
+                        color: Colors.black,
+                        size: 40,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20, top: 30, left: 5),
+                      child: Text(
+                        "Create new story ",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "Montserrat"),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               InkWell(
                 onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AddStory())),
-                child: const Padding(
-                  padding: EdgeInsets.only(bottom: 20, top: 30, left: 5),
-                  child: Text(
-                    "Create new story ",
-                    style: TextStyle(
+                    MaterialPageRoute(builder: (context) => const EditList())),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20, top: 20),
+                      child: Icon(
+                        Icons.edit_document,
                         color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Montserrat"),
-                    textAlign: TextAlign.center,
-                  ),
+                        size: 40,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(bottom: 20, top: 30, left: 5),
+                      child: Text(
+                        "Edit your story",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            fontFamily: "Montserrat"),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],

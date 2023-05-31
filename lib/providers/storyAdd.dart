@@ -16,8 +16,8 @@ class StoryLists with ChangeNotifier {
   StoryList selectById(String id) =>
       _allStoryList.firstWhere((element) => element.id == id);
 
-  void addStoryList(
-      String title, String description, String categories, String image,
+  void addStoryList(String title, String description, String categories,
+      String image, String part, String content,
       [BuildContext? context]) async {
     DateTime datetimeNow = DateTime.now();
 
@@ -36,6 +36,8 @@ class StoryLists with ChangeNotifier {
             "writer": "aivel",
             "imageUrl": image,
             "createdAt": datetimeNow.toString(),
+            "part": part,
+            "content": content,
           },
         ),
       );
@@ -49,6 +51,8 @@ class StoryLists with ChangeNotifier {
             writer: "aivel",
             imageUrl: image,
             createdAt: datetimeNow,
+            part: part,
+            content: content,
           ),
         );
         print(allStoryList);
@@ -62,55 +66,42 @@ class StoryLists with ChangeNotifier {
     }
   }
 
-  void editStoryList(
-      String id, String title, String description, String image) async {
+  void editStoryList(String id, String title, String description, String image,
+      String part, String content) async {
     Uri url = Uri.parse(
-        "https://readme-ce42b-default-rtdb.asia-southeast1.firebasedatabase.app/StoryLists/$id.json");
-    try {
-      final response = await http.patch(
-        url,
-        body: json.encode(
-          {
-            "title": title,
-            "description": description,
-            "imageUrl": image,
-          },
-        ),
-      );
+        "https://readme-cfafc-default-rtdb.firebaseio.com/StoryLists/$id.json");
 
-      if (response.statusCode >= 200 && response.statusCode < 300) {
-        StoryList selectStoryList =
-            _allStoryList.firstWhere((element) => element.id == id);
-        selectStoryList.title = title;
-        selectStoryList.description = description;
-        selectStoryList.imageUrl = image;
-        notifyListeners();
-      } else {
-        throw ("${response.statusCode}");
-      }
-    } catch (error) {
-      throw (error);
-    }
+    final response = await http.patch(
+      url,
+      body: json.encode(
+        {
+          "title": title,
+          "description": description,
+          "imageUrl": image,
+          "part": part,
+          "content": content
+        },
+      ),
+    );
+
+    StoryList selectStoryList =
+        _allStoryList.firstWhere((element) => element.id == id);
+    selectStoryList.title = title;
+    selectStoryList.description = description;
+    selectStoryList.imageUrl = image;
+    notifyListeners();
   }
 
   deleteStoryList(String id) async {
     Uri url = Uri.parse(
-        "https://http-req-bec2d-default-rtdb.firebaseio.com/StoryLists/$id.json");
+        "https://readme-cfafc-default-rtdb.firebaseio.com/StoryLists/$id.json");
 
-    try {
-      final response = await http.delete(url).then(
-        (response) {
-          _allStoryList.removeWhere((element) => element.id == id);
-          notifyListeners();
-        },
-      );
-
-      if (response.statusCode < 200 && response.statusCode >= 300) {
-        throw ("${response.statusCode}");
-      }
-    } catch (error) {
-      throw (error);
-    }
+    final response = await http.delete(url).then(
+      (response) {
+        _allStoryList.removeWhere((element) => element.id == id);
+        notifyListeners();
+      },
+    );
   }
 
   Future<void> initialData() async {

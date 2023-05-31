@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/models/story_model.dart';
 import 'package:provider/provider.dart';
-import '../models/story.dart';
 import '../pages/titlePage.dart';
-import '../providers/stories.dart';
 
 class Trending extends StatelessWidget {
   const Trending({
@@ -11,15 +10,20 @@ class Trending extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final data = Provider.of<Story>(context);
+    final data = Provider.of<StoryList>(context);
 
     return InkWell(
       onTap: () {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => TitlePage(data.id, data.title,
-                    data.description, data.writer, data.category, data.image)));
+                builder: (context) => TitlePage(
+                    data.id,
+                    data.title,
+                    data.description,
+                    data.writer,
+                    data.categories,
+                    data.imageUrl)));
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 20),
@@ -34,7 +38,7 @@ class Trending extends StatelessWidget {
               ClipRRect(
                 borderRadius: BorderRadius.circular(5),
                 child: Image(
-                  image: NetworkImage(data.image),
+                  image: NetworkImage(data.imageUrl),
                   width: 280,
                   height: 130,
                   fit: BoxFit.cover,

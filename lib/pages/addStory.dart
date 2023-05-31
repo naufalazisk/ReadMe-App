@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/pages/addPart.dart';
 import 'package:provider/provider.dart';
 import '../providers/storyAdd.dart';
 
@@ -40,7 +41,7 @@ class AddStory extends StatelessWidget {
               size: 30,
             ),
             onPressed: () {
-              stories.addStoryList(
+              AddPart(
                 judulController.text,
                 ringkasanController.text,
                 kategoriController.text,
@@ -81,7 +82,7 @@ class AddStory extends StatelessWidget {
                 textInputAction: TextInputAction.done,
                 controller: imageController,
                 onEditingComplete: () {
-                  stories.addStoryList(
+                  AddPart(
                     judulController.text,
                     ringkasanController.text,
                     kategoriController.text,
@@ -96,16 +97,20 @@ class AddStory extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: OutlinedButton(
                   onPressed: () {
-                    stories.addStoryList(
-                      judulController.text,
-                      ringkasanController.text,
-                      kategoriController.text,
-                      imageController.text,
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AddPart(
+                          judulController.text,
+                          ringkasanController.text,
+                          kategoriController.text,
+                          imageController.text,
+                        ),
+                      ),
                     );
-                    Navigator.pop(context);
                   },
                   child: const Text(
-                    "Submit",
+                    "Continue",
                     style: TextStyle(
                       fontSize: 18,
                     ),

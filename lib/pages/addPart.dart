@@ -6,6 +6,12 @@ class AddPart extends StatelessWidget {
   static const routeName = "/add-story";
   final TextEditingController partController = TextEditingController();
   final TextEditingController contentController = TextEditingController();
+  final String title;
+  final String description;
+  final String categories;
+  final String image;
+
+  AddPart(this.title, this.description, this.categories, this.image);
 
   @override
   Widget build(BuildContext context) {
@@ -39,10 +45,15 @@ class AddPart extends StatelessWidget {
             ),
             onPressed: () {
               stories.addStoryList(
+                title,
+                description,
+                categories,
+                image,
                 partController.text,
                 contentController.text,
               );
-              Navigator.pop(context);
+              int count = 0;
+              Navigator.of(context).popUntil((_) => count++ >= 2);
             },
           ),
         ],
@@ -55,13 +66,13 @@ class AddPart extends StatelessWidget {
               TextFormField(
                 autocorrect: false,
                 autofocus: true,
-                decoration: const InputDecoration(labelText: "Nama Cerita"),
+                decoration: const InputDecoration(labelText: "Part"),
                 textInputAction: TextInputAction.next,
                 controller: partController,
               ),
               TextFormField(
                 autocorrect: false,
-                decoration: const InputDecoration(labelText: "Ringkasan"),
+                decoration: const InputDecoration(labelText: "Content"),
                 textInputAction: TextInputAction.next,
                 controller: contentController,
               ),
@@ -72,10 +83,15 @@ class AddPart extends StatelessWidget {
                 child: OutlinedButton(
                   onPressed: () {
                     stories.addStoryList(
+                      title,
+                      description,
+                      categories,
+                      image,
                       partController.text,
                       contentController.text,
                     );
-                    Navigator.pop(context);
+                    int count = 0;
+                    Navigator.of(context).popUntil((_) => count++ >= 2);
                   },
                   child: const Text(
                     "Submit",

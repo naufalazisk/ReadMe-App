@@ -89,7 +89,7 @@ class Home extends StatelessWidget {
                             scrollDirection: Axis.horizontal,
                             itemBuilder: (context, index) =>
                                 ChangeNotifierProvider.value(
-                              value: dataMain[index],
+                              value: realDataMain.reversed.toList()[index],
                               child: const Trending(),
                             ),
                             itemCount: 4,

@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/navbar.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+
+import '../providers/storyAdd.dart';
 import '../pages/signIn.dart';
 import '../pages/signUp.dart';
-import 'providers/storyAdd.dart';
 import '../providers/authentication.dart';
 import '../providers/favorites.dart';
 import '../providers/stories.dart';
+import '../pages/home.dart';
 import '../wrapper.dart';
 
 void main(List<String> args) async {
@@ -35,11 +38,11 @@ class MyApp extends StatelessWidget {
         // ),
         initialRoute: '/',
         routes: {
-          '/': (context) => const Wrapper(),
+          '/': (context) => navbar(),
           '/login': (context) => signIn(),
           '/register': (context) => signUp(),
         },
-        // home: navbar()
+        // homeep: navbar()
       ),
     );
   }

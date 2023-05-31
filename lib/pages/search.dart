@@ -1,6 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import '../pages/categoryHome.dart';
+import 'categoryList.dart';
 import '../pages/onSearch.dart';
 
 class search extends StatelessWidget {

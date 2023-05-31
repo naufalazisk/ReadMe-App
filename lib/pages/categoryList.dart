@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:faker/faker.dart';
+
 import '../providers/storyAdd.dart';
 import '../widgets/category.dart';
 
-class EditList extends StatefulWidget {
-  const EditList({super.key});
+// udah dipindah ke widgets kategori
+class CategoryList extends StatelessWidget {
+  var faker = Faker();
 
-  @override
-  State<EditList> createState() => _EditListState();
-}
-
-class _EditListState extends State<EditList> {
-  bool isInit = true;
-  @override
-  void didChangeDependencies() {
-    if (isInit) {
-      Provider.of<StoryLists>(context).initialData();
-    }
-    isInit = false;
-    super.didChangeDependencies();
-  }
+  CategoryList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +39,7 @@ class _EditListState extends State<EditList> {
             children: const [
               Padding(
                 padding: EdgeInsets.fromLTRB(100, 10, 0, 10),
-                child: Text("Modify Story",
+                child: Text("Horror",
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 20,
@@ -79,19 +69,14 @@ class _EditListState extends State<EditList> {
                             fontFamily: "Montserrat")),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.8,
-                    child: (dataMain.length == 0)
-                        ? const Center(
-                            child: Text("No Story Added"),
-                          )
-                        : ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            itemBuilder: (context, index) =>
-                                ChangeNotifierProvider.value(
-                                    value: dataMain[index],
-                                    child: const Category()),
-                            itemCount: dataMain.length,
-                          ),
+                    height: 150,
+                    child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) =>
+                          ChangeNotifierProvider.value(
+                              value: dataMain[index], child: const Category()),
+                      itemCount: data.jumlahStoryList,
+                    ),
                   )
                 ],
               ),

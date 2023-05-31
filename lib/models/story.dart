@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+// model for faker
+
 class Story with ChangeNotifier {
   String id;
   String title;

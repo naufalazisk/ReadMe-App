@@ -1,6 +1,6 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/editlist_page.dart';
+import 'package:project_kelompok_mobile/pages/editList.dart';
 
 import '../pages/profile.dart';
 import 'addStory.dart';

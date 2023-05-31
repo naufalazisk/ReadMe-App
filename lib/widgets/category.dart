@@ -23,7 +23,7 @@ class Category extends StatelessWidget {
                     data.id,
                     data.title,
                     data.description,
-                    data.author,
+                    data.writer,
                     data.categories,
                     data.imageUrl)));
       },
@@ -68,7 +68,7 @@ class Category extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 0),
-                      child: Text(data.author,
+                      child: Text(data.writer,
                           style: const TextStyle(
                               color: Colors.pink,
                               fontSize: 12,

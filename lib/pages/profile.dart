@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/pages/editProfile.dart';
 import 'package:project_kelompok_mobile/pages/setting.dart';
+
+import 'editList.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -29,7 +30,27 @@ class _ProfilePageState extends State<ProfilePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffD6C9C9),
-        title: const Text("Profile"),
+        toolbarHeight: 70,
+        title: Center(
+          child: const Text(
+            "Profile",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700),
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 35,
+          ),
+        ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 10),
@@ -40,7 +61,7 @@ class _ProfilePageState extends State<ProfilePage> {
               },
               icon: const Icon(Icons.settings),
               color: Colors.white,
-              iconSize: 25,
+              iconSize: 35,
             ),
           )
         ],
@@ -178,18 +199,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       ),
                     ),
                     child: const Text(
-                      "Edit Profile",
+                      "My Story",
                       style: TextStyle(
                         fontSize: 16,
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => EditProfile(
-                                name: "John Doe",
-                                email: "johndoe@example.com"))),
+                    onPressed: () => Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => EditList())),
                     // Navigate to edit profile screen
                   ),
                 ],
@@ -202,44 +219,44 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 }
 
-class userStory extends StatelessWidget {
-  const userStory({
-    super.key,
-  });
+// class userStory extends StatelessWidget {
+//   const userStory({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 10),
-      child: Container(
-        width: 128,
-        height: 200,
-        color: Colors.transparent,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: const Image(
-                image: AssetImage('images/image 4.png'),
-                width: 120,
-                height: 180,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(10, 10, 0, 5),
-              child: Text("Tittle story",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                      fontFamily: "Montserrat")),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: const EdgeInsets.only(right: 10),
+//       child: Container(
+//         width: 128,
+//         height: 200,
+//         color: Colors.transparent,
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.start,
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             ClipRRect(
+//               borderRadius: BorderRadius.circular(5),
+//               child: const Image(
+//                 image: AssetImage('images/image 4.png'),
+//                 width: 120,
+//                 height: 180,
+//                 fit: BoxFit.cover,
+//               ),
+//             ),
+//             const Padding(
+//               padding: EdgeInsets.fromLTRB(10, 10, 0, 5),
+//               child: Text("Tittle story",
+//                   style: TextStyle(
+//                       color: Colors.black,
+//                       fontSize: 20,
+//                       fontWeight: FontWeight.w700,
+//                       fontFamily: "Montserrat")),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }

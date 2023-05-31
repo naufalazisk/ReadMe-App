@@ -44,7 +44,28 @@ class _EditProfileState extends State<EditProfile> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffD6C9C9),
-        title: const Text("Edit Profile"),
+        toolbarHeight: 75,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 80),
+          child: const Text(
+            "Edit Profile",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700),
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+            size: 35,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(

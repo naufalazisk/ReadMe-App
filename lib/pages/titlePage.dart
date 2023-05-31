@@ -33,7 +33,7 @@ class TitlePage extends StatelessWidget {
             iconSize: 30,
           ),
           title: Padding(
-            padding: const EdgeInsets.fromLTRB(0, 23, 0, 20),
+            padding: const EdgeInsets.fromLTRB(95, 23, 0, 20),
             child: Padding(
               padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
               child: Text(
@@ -51,7 +51,7 @@ class TitlePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Center(
                 child: SizedBox(
@@ -67,19 +67,21 @@ class TitlePage extends StatelessWidget {
                       )),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(15),
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: "Montserrat"),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Text(
+                    title,
+                    style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: "Montserrat"),
+                  ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(10, 0, 5, 10),
+                padding: const EdgeInsets.fromLTRB(3, 0, 5, 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -104,10 +106,10 @@ class TitlePage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.only(left: 10, bottom: 15),
                 child: Container(
                   width: 50,
-                  height: 13,
+                  height: 15,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
                       color: Colors.black),
@@ -116,7 +118,7 @@ class TitlePage extends StatelessWidget {
                     category,
                     style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 10,
+                        fontSize: 13,
                         fontWeight: FontWeight.w700,
                         fontFamily: "Montserrat"),
                   )),

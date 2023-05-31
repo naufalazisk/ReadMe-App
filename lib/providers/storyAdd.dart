@@ -33,7 +33,7 @@ class StoryLists with ChangeNotifier {
             "title": title,
             "description": description,
             "categories": categories,
-            "author": "aivel",
+            "writer": "aivel",
             "imageUrl": image,
             "createdAt": datetimeNow.toString(),
           },
@@ -46,7 +46,7 @@ class StoryLists with ChangeNotifier {
             title: title,
             description: description,
             categories: categories,
-            author: "aivel",
+            writer: "aivel",
             imageUrl: image,
             createdAt: datetimeNow,
           ),
@@ -130,14 +130,15 @@ class StoryLists with ChangeNotifier {
             DateFormat("yyyy-mm-dd hh:mm:ss").parse(value["createdAt"]);
         _allStoryList.add(
           StoryList(
-            id: key,
-            createdAt: dateTimeParse,
-            imageUrl: value["imageUrl"],
-            author: value["author"],
-            title: value["title"],
-            categories: value["categories"],
-            description: value["description"],
-          ),
+              id: key,
+              createdAt: dateTimeParse,
+              imageUrl: value["imageUrl"],
+              writer: value["writer"],
+              title: value["title"],
+              categories: value["categories"],
+              description: value["description"],
+              part: value["part"],
+              content: value["content"]),
         );
       },
     );

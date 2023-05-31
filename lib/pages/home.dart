@@ -1,13 +1,13 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/categoryHome.dart';
-import 'package:project_kelompok_mobile/pages/kategoriHome.dart';
-import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
+
+import '../pages/categoryList.dart';
+import '../providers/storyAdd.dart';
 import '../pages/profile.dart';
-import '../providers/stories.dart';
 import '../widgets/poster.dart';
 import '../widgets/trending.dart';
+import '../providers/stories.dart';
 
 class Home extends StatelessWidget {
   var faker = Faker();
@@ -140,7 +140,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -166,7 +166,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -202,7 +202,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -228,7 +228,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -264,7 +264,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,
@@ -290,7 +290,7 @@ class Home extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                     builder: (context) =>
-                                                        kategoriHome())),
+                                                        CategoryList())),
                                             child: const SizedBox(
                                               width: 174,
                                               height: 40,

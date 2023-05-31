@@ -21,7 +21,7 @@ class Poster extends StatelessWidget {
                         data.id,
                         data.title,
                         data.description,
-                        data.author,
+                        data.writer,
                         data.categories,
                         data.imageUrl,
                       )));

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/widgets/edit.dart';
 import 'package:provider/provider.dart';
 import '../providers/storyAdd.dart';
 import '../widgets/category.dart';
@@ -42,7 +43,7 @@ class _EditListState extends State<EditList> {
             size: 35,
           ),
         ),
-        title: Padding(
+        title: const Padding(
           padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
           child: Text("Modify Story",
               style: TextStyle(
@@ -85,7 +86,7 @@ class _EditListState extends State<EditList> {
                             itemBuilder: (context, index) =>
                                 ChangeNotifierProvider.value(
                                     value: dataMain[index],
-                                    child: const Category()),
+                                    child: EditWidget(index: index)),
                             itemCount: dataMain.length,
                           ),
                   )

@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => navbar(),
           '/login': (context) => signIn(),
           '/register': (context) => signUp(),
+          '/home': (context) => navbar(),
         },
         // homeep: navbar()
       ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/models/story_model.dart';
+import 'package:project_kelompok_mobile/pages/editStory.dart';
 import 'package:project_kelompok_mobile/pages/titlePage.dart';
 import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
@@ -8,14 +9,18 @@ import '../models/story.dart';
 // 1 widget pada edit
 
 class EditWidget extends StatelessWidget {
-  const EditWidget({super.key});
+  int index;
+  EditWidget({required this.index});
 
   @override
   Widget build(BuildContext context) {
+    final provData = Provider.of<StoryLists>(context);
+    final data = provData.allStoryList[index];
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 10, top: 5),
       child: Container(
-        width: 500,
+        width: 400,
         height: 130,
         color: Colors.transparent,
         child: Row(
@@ -24,8 +29,7 @@ class EditWidget extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(5),
               child: Image(
-                image: NetworkImage(
-                    "https://lh3.googleusercontent.com/-j2p69g-yhEQ/AAAAAAAAAAI/AAAAAAAAABw/QkAzfV67nXE/s46-c-k-no/photo.jpg"),
+                image: NetworkImage(data.imageUrl),
                 width: 90,
                 height: 200,
                 fit: BoxFit.cover,
@@ -40,8 +44,8 @@ class EditWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.only(top: 0, bottom: 1),
                     child: SizedBox(
-                      width: 250,
-                      child: Text("data.title",
+                      width: 200,
+                      child: Text(data.title,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                           style: const TextStyle(
@@ -54,7 +58,7 @@ class EditWidget extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 0),
-                    child: Text("data.writer",
+                    child: Text(data.writer,
                         style: const TextStyle(
                             color: Colors.pink,
                             fontSize: 12,
@@ -62,9 +66,9 @@ class EditWidget extends StatelessWidget {
                             fontFamily: "Montserrat")),
                   ),
                   SizedBox(
-                    width: 250,
+                    width: 200,
                     child: Text(
-                      "data.description",
+                      data.description,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
@@ -88,7 +92,7 @@ class EditWidget extends StatelessWidget {
                               color: Colors.black),
                           child: Center(
                               child: Text(
-                            "data.categories",
+                            data.categories,
                             style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 10,
@@ -102,19 +106,37 @@ class EditWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: Column(children: [
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Icon(Icons.edit),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(5),
-                  child: Icon(Icons.delete),
-                )
-              ]),
-            )
+            Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => EditStory(
+                                    data.id,
+                                  )));
+                    },
+                    child: const Icon(Icons.edit)),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5),
+                child: InkWell(
+                    onTap: () {
+                      Provider.of<StoryLists>(context, listen: false)
+                          .deleteStoryList(data.id)
+                          .then((_) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            content: Text("Story Deleted"),
+                          ),
+                        );
+                      });
+                    },
+                    child: const Icon(Icons.delete)),
+              )
+            ])
           ],
         ),
       ),

@@ -30,7 +30,7 @@ class _EditListState extends State<EditList> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xffD6C9C9),
+        backgroundColor: Colors.white,
         toolbarHeight: 70,
         elevation: 2,
         leading: IconButton(
@@ -39,22 +39,22 @@ class _EditListState extends State<EditList> {
           },
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: Colors.black,
             size: 35,
           ),
         ),
         title: const Padding(
-          padding: EdgeInsets.fromLTRB(70, 10, 0, 10),
+          padding: EdgeInsets.fromLTRB(60, 10, 0, 10),
           child: Text("Modify Story",
               style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 25,
                   fontFamily: "Montserrat",
                   fontWeight: FontWeight.w700)),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
+        padding: const EdgeInsets.fromLTRB(20, 20, 10, 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

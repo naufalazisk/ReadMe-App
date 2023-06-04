@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/favorites.dart';
+import '../providers/storyAdd.dart';
 
 // halaman deskripsi cerita
 
@@ -19,6 +20,9 @@ class TitlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // final realData = Provider.of<StoryLists>(context);
+    // final realDataMain = realData.allStoryList;
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -33,9 +37,9 @@ class TitlePage extends StatelessWidget {
             iconSize: 30,
           ),
           title: Padding(
-            padding: const EdgeInsets.fromLTRB(95, 23, 0, 20),
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+            padding: EdgeInsets.fromLTRB(35, 10, 0, 10),
+            child: Container(
+              width: 200,
               child: Text(
                 title,
                 style: const TextStyle(
@@ -96,7 +100,7 @@ class TitlePage extends StatelessWidget {
                       writer,
                       style: const TextStyle(
                         color: Colors.black,
-                        fontSize: 15,
+                        fontSize: 16,
                         fontFamily: "Montserrat",
                         fontWeight: FontWeight.w400,
                       ),
@@ -108,20 +112,23 @@ class TitlePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 10, bottom: 15),
                 child: Container(
-                  width: 50,
-                  height: 15,
+                  width: 80,
+                  // height: 15,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(3),
                       color: Colors.black),
-                  child: Center(
-                      child: Text(
-                    category,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Montserrat"),
-                  )),
+                  child: Padding(
+                    padding: const EdgeInsets.all(3),
+                    child: Center(
+                        child: Text(
+                      category,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Montserrat"),
+                    )),
+                  ),
                 ),
               ),
               Padding(

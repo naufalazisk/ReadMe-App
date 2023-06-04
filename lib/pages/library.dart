@@ -24,19 +24,14 @@ class _LibraryState extends State<Library> {
         backgroundColor: Colors.white,
         title: Padding(
           padding: const EdgeInsets.fromLTRB(5, 23, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-                child: Text("Library",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w700)),
-              ),
-            ],
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+            child: Text("Library",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontFamily: "Montserrat",
+                    fontWeight: FontWeight.w700)),
           ),
         ),
       ),

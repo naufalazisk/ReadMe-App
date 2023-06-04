@@ -23,7 +23,7 @@ class AddPart extends StatelessWidget {
         backgroundColor: Colors.white,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-          child: Text("Add Part",
+          child: Text("Add Story",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 25,
@@ -31,7 +31,11 @@ class AddPart extends StatelessWidget {
                   fontWeight: FontWeight.w700)),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 35,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },

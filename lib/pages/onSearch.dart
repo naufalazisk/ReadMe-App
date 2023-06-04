@@ -8,24 +8,15 @@ class onSearch extends StatelessWidget {
         toolbarHeight: 50,
         elevation: 2,
         backgroundColor: const Color(0xffD6C9C9),
-        title: Padding(
-          padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Padding(
-                padding: EdgeInsets.fromLTRB(90, 25, 0, 10),
-                child: Text(
-                  "Search",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25,
-                      fontFamily: "Montserrat",
-                      fontWeight: FontWeight.w700),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+        title: Center(
+          child: Text(
+            "Search",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: FontWeight.w700),
+            textAlign: TextAlign.center,
           ),
         ),
         // kurang tulisan cancel navigator.pop ke write

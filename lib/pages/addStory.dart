@@ -28,7 +28,11 @@ class AddStory extends StatelessWidget {
                   fontWeight: FontWeight.w700)),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 35,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },

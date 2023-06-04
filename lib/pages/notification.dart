@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:project_kelompok_mobile/pages/profile.dart';
 
-class notification extends StatelessWidget {
+class Notifications extends StatelessWidget {
   final faker = Faker();
 
-  notification({super.key});
+  Notifications({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 70,
         elevation: 2,
         backgroundColor: Colors.white,
@@ -47,14 +48,17 @@ class notification extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: 100,
-        itemBuilder: (context, index) {
-          return ChatItem(
-              imageUrl: "https://picsum.photos/id/$index/200/300",
-              title: faker.person.name(),
-              subtitle: faker.lorem.sentence());
-        },
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
+        child: ListView.builder(
+          itemCount: 100,
+          itemBuilder: (context, index) {
+            return ChatItem(
+                imageUrl: "https://picsum.photos/id/$index/200/300",
+                title: faker.person.name(),
+                subtitle: faker.lorem.sentence());
+          },
+        ),
       ),
     );
   }

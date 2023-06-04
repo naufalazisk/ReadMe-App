@@ -17,23 +17,17 @@ class search extends StatelessWidget {
           elevation: 2,
           backgroundColor: const Color(0xffD6C9C9),
           title: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 23, 10, 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.fromLTRB(145, 25, 0, 10),
-                  child: Text(
-                    "Search",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.w700),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ],
+            padding: EdgeInsets.fromLTRB(0, 30, 0, 10),
+            child: Center(
+              child: Text(
+                "Search",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                    fontFamily: "Montserrat",
+                    fontWeight: FontWeight.w700),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           bottom: PreferredSize(
@@ -95,15 +89,17 @@ class search extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(left: 20, top: 20),
-                  child: Text(
-                    "Browse category",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700,
-                        fontFamily: "Montserrat"),
-                    textAlign: TextAlign.left,
+                  padding: EdgeInsets.only(top: 20, bottom: 20),
+                  child: Center(
+                    child: Text(
+                      "Browse category",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          fontFamily: "Montserrat"),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
                 ),
                 InkWell(

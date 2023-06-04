@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/providers/favorites.dart';
 import 'package:provider/provider.dart';
 
-import '../models/story.dart';
+import '../pages/titlePage.dart';
+import '../providers/favorites.dart';
 
 class Favorite extends StatelessWidget {
   int index;

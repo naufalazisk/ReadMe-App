@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/models/story_model.dart';
-import 'package:project_kelompok_mobile/pages/editStory.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
-import '../models/story.dart';
+
+import '../models/story_model.dart';
+import '../pages/editStory.dart';
+import '../pages/titlePage.dart';
+import '../providers/storyAdd.dart';
 
 // 1 widget pada edit
 
@@ -108,7 +108,7 @@ class EditWidget extends StatelessWidget {
             ),
             Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.only(left: 30, bottom: 20),
                 child: InkWell(
                     onTap: () {
                       Navigator.push(
@@ -121,7 +121,7 @@ class EditWidget extends StatelessWidget {
                     child: const Icon(Icons.edit)),
               ),
               Padding(
-                padding: const EdgeInsets.all(5),
+                padding: const EdgeInsets.only(left: 30, top: 20),
                 child: InkWell(
                     onTap: () {
                       Provider.of<StoryLists>(context, listen: false)

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/models/story_model.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/providers/storyAdd.dart';
 import 'package:provider/provider.dart';
-import '../models/story.dart';
+
+import '../models/story_model.dart';
+import '../pages/titlePage.dart';
+import '../providers/storyAdd.dart';
 
 // 1 widget cerita pada kategori
 

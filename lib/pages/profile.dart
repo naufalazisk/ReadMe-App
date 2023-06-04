@@ -12,9 +12,9 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   // User profile data
-  String name = "John Doe";
-  String username = "@johndoe";
-  String email = "johndoe@example.com";
+  String name = "Name";
+  String username = "username";
+  String email = "email@example.com";
   String userDescription =
       "I spend my days crafting compelling content for a variety of clients, ranging from blog posts and articles to social media posts and marketing copy.";
 
@@ -126,7 +126,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 15),
                     child: Text(
-                      "Works by johndoe",
+                      "Your Works",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 17,

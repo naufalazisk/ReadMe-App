@@ -63,7 +63,7 @@ class navbar extends StatelessWidget {
           case 4:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: notification(),
+                child: Notifications(),
               );
             });
           default:

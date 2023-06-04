@@ -8,7 +8,6 @@ import '../pages/signIn.dart';
 import '../pages/signUp.dart';
 import '../providers/authentication.dart';
 import '../providers/favorites.dart';
-import '../providers/stories.dart';
 import '../pages/home.dart';
 import '../wrapper.dart';
 
@@ -26,7 +25,6 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => Authentication()),
-        ChangeNotifierProvider(create: (context) => Stories()),
         ChangeNotifierProvider(create: (context) => StoryLists()),
         ChangeNotifierProvider(create: (context) => Favorites())
       ],
@@ -38,7 +36,7 @@ class MyApp extends StatelessWidget {
         // ),
         initialRoute: '/',
         routes: {
-          '/': (context) => navbar(),
+          '/': (context) => Wrapper(),
           '/login': (context) => signIn(),
           '/register': (context) => signUp(),
           '/home': (context) => navbar(),

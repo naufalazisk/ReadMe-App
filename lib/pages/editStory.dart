@@ -34,7 +34,7 @@ class EditStory extends StatelessWidget {
         backgroundColor: Colors.white,
         title: const Padding(
           padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
-          child: Text("Add Story",
+          child: Text("Edit Story",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 25,
@@ -42,7 +42,11 @@ class EditStory extends StatelessWidget {
                   fontWeight: FontWeight.w700)),
         ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+            size: 25,
+          ),
           onPressed: () {
             Navigator.pop(context);
           },
@@ -94,13 +98,13 @@ class EditStory extends StatelessWidget {
                 ),
                 TextFormField(
                   autocorrect: false,
-                  decoration: const InputDecoration(labelText: "Kategori"),
+                  decoration: const InputDecoration(labelText: "Part"),
                   textInputAction: TextInputAction.next,
                   controller: partController,
                 ),
                 TextFormField(
                   autocorrect: false,
-                  decoration: const InputDecoration(labelText: "Kategori"),
+                  decoration: const InputDecoration(labelText: "Content"),
                   textInputAction: TextInputAction.next,
                   controller: contentController,
                 ),

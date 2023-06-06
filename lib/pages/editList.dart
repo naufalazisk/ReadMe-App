@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/widgets/edit.dart';
 import 'package:provider/provider.dart';
 import '../providers/storyAdd.dart';
-import '../widgets/category.dart';
 
 class EditList extends StatefulWidget {
   const EditList({super.key});
@@ -12,14 +11,18 @@ class EditList extends StatefulWidget {
 }
 
 class _EditListState extends State<EditList> {
-  bool isInit = true;
+  // bool isInit = true;
+  // @override
+  // void didChangeDependencies() {
+  //   if (isInit) {
+  //     Provider.of<StoryLists>(context).initialData();
+  //   }
+  //   isInit = false;
+  //   super.didChangeDependencies();
+  // }
   @override
-  void didChangeDependencies() {
-    if (isInit) {
-      Provider.of<StoryLists>(context).initialData();
-    }
-    isInit = false;
-    super.didChangeDependencies();
+  void initState() {
+    Provider.of<StoryLists>(context, listen: false).initialData();
   }
 
   @override

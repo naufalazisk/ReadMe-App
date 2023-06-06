@@ -25,7 +25,7 @@ class _signInState extends State<signIn> {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<Authentication>(context);
+    // final authService = Provider.of<Authentication>(context);
 
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(

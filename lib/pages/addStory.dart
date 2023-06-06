@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/addPart.dart';
-import 'package:provider/provider.dart';
-import '../providers/storyAdd.dart';
 
 class AddStory extends StatelessWidget {
   static const routeName = "/add-story";
@@ -12,7 +10,6 @@ class AddStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final stories = Provider.of<StoryLists>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/pages/storyPage.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/favorites.dart';
-import '../providers/storyAdd.dart';
 
 // halaman deskripsi cerita
 
@@ -12,10 +12,12 @@ class TitlePage extends StatelessWidget {
   String description;
   String writer;
   String category;
+  String part;
+  String content;
   String image;
 
   TitlePage(this.id, this.title, this.description, this.writer, this.category,
-      this.image,
+      this.image, this.content, this.part,
       {super.key});
 
   @override
@@ -173,7 +175,16 @@ class TitlePage extends StatelessWidget {
                                 fontFamily: "Monserrat",
                                 fontWeight: FontWeight.w500),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => StoryPage(
+                                          title: title,
+                                          part: part,
+                                          content: content,
+                                        )));
+                          },
                         ),
                       ),
                     ),

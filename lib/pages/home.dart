@@ -86,7 +86,7 @@ class Home extends StatelessWidget {
                               value: realDataMain.reversed.toList()[index],
                               child: const Trending(),
                             ),
-                            itemCount: 4,
+                            itemCount: realDataMain.length,
                           )),
                     ),
                     Container(

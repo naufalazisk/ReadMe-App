@@ -261,7 +261,8 @@ class _signUpState extends State<signUp> {
 
   @override
   Widget build(BuildContext context) {
-    final authService = Provider.of<Authentication>(context);
+    // final authService = Provider.of<Authentication>(context);
+
     return Scaffold(
         body: AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,

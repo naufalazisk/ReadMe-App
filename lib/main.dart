@@ -8,7 +8,6 @@ import '../pages/signIn.dart';
 import '../pages/signUp.dart';
 import '../providers/authentication.dart';
 import '../providers/favorites.dart';
-import '../pages/home.dart';
 import '../wrapper.dart';
 
 void main(List<String> args) async {

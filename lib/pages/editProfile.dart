@@ -116,19 +116,7 @@ class _EditProfileState extends State<EditProfile> {
                 TextFormField(
                   obscureText: true,
                   decoration: const InputDecoration(
-                    labelText: "Password",
-                  ),
-                  onChanged: (value) {
-                    setState(() {
-                      password = value;
-                    });
-                  },
-                ),
-                const SizedBox(height: 16),
-                TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    labelText: "New Password",
+                    labelText: "Deskripsi",
                   ),
                   onChanged: (value) {
                     setState(() {

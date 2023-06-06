@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 import '../providers/authentication.dart';
 import '../models/user.dart';
 import '../pages/signIn.dart';
-import '../pages/home.dart';
 import '../navbar.dart';
 
 class Wrapper extends StatelessWidget {

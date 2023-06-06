@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/home.dart';
-import 'package:project_kelompok_mobile/pages/titlePage.dart';
-import 'package:project_kelompok_mobile/pages/setting.dart';
+import '../pages/setting.dart';
 
 import 'editList.dart';
 
@@ -13,7 +11,6 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   // User profile data
   String name = "Name";
-  String username = "username";
   String email = "email@example.com";
   String userDescription =
       "I spend my days crafting compelling content for a variety of clients, ranging from blog posts and articles to social media posts and marketing copy.";
@@ -86,14 +83,6 @@ class _ProfilePageState extends State<ProfilePage> {
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(
-                    username,
-                    style: const TextStyle(
-                      fontSize: 16,
                       color: Colors.black,
                     ),
                   ),

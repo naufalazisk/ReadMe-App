@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../models/story_model.dart';
 import '../pages/editStory.dart';
-import '../pages/titlePage.dart';
 import '../providers/storyAdd.dart';
 
 // 1 widget pada edit
@@ -81,26 +78,22 @@ class EditWidget extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 6),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: 50,
-                          height: 13,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(3),
-                              color: Colors.black),
-                          child: Center(
-                              child: Text(
-                            data.categories,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 10,
-                                fontWeight: FontWeight.w700,
-                                fontFamily: "Montserrat"),
-                          )),
+                    child: Container(
+                      width: 60,
+                      height: 13,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(3),
+                          color: Colors.black),
+                      child: Center(
+                        child: Text(
+                          data.categories,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w700,
+                              fontFamily: "Montserrat"),
                         ),
-                      ],
+                      ),
                     ),
                   )
                 ],

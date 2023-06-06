@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:project_kelompok_mobile/pages/home.dart';
 import 'package:project_kelompok_mobile/pages/library.dart';
-import 'package:project_kelompok_mobile/pages/notification.dart';
+import 'package:project_kelompok_mobile/pages/profile.dart';
 import 'package:project_kelompok_mobile/pages/search.dart';
 import 'package:project_kelompok_mobile/pages/write.dart';
 
@@ -29,8 +29,8 @@ class navbar extends StatelessWidget {
             label: 'Search',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notification_add),
-            label: 'Notification',
+            icon: Icon(Icons.person),
+            label: 'Profile',
           ),
         ],
       ),
@@ -63,7 +63,7 @@ class navbar extends StatelessWidget {
           case 4:
             return CupertinoTabView(builder: (context) {
               return CupertinoPageScaffold(
-                child: Notifications(),
+                child: ProfilePage(),
               );
             });
           default:

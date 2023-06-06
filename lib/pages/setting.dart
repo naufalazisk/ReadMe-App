@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../pages/editProfile.dart';
-import '../pages/notification.dart';
 import '../providers/authentication.dart';
 
 class Setting extends StatelessWidget {
@@ -46,20 +45,6 @@ class Setting extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => EditProfile(
                           name: "John Doe", email: "johndoe@example.com")))),
-          InkWell(
-              child: const ListTile(
-                leading: Icon(Icons.notifications,
-                    color: Color.fromARGB(255, 194, 151, 151)),
-                title: Text('Notifications',
-                    style: TextStyle(
-                        fontFamily: 'Montserrat',
-                        fontSize: 18,
-                        color: Color.fromARGB(255, 194, 151, 151))),
-                trailing: Icon(Icons.arrow_forward_ios,
-                    color: Color.fromARGB(255, 194, 151, 151)),
-              ),
-              onTap: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Notifications()))),
           InkWell(
             child: ListTile(
               leading: const Icon(Icons.help,

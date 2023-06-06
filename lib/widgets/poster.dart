@@ -24,6 +24,8 @@ class Poster extends StatelessWidget {
                         data.writer,
                         data.categories,
                         data.imageUrl,
+                        data.content,
+                        data.part,
                       )));
         },
         child: Padding(

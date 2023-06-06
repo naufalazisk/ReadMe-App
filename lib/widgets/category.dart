@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 
 import '../models/story_model.dart';
 import '../pages/titlePage.dart';
-import '../providers/storyAdd.dart';
 
 // 1 widget cerita pada kategori
 
@@ -20,12 +19,15 @@ class Category extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => TitlePage(
-                    data.id,
-                    data.title,
-                    data.description,
-                    data.writer,
-                    data.categories,
-                    data.imageUrl)));
+                      data.id,
+                      data.title,
+                      data.description,
+                      data.writer,
+                      data.categories,
+                      data.imageUrl,
+                      data.content,
+                      data.part,
+                    )));
       },
       child: Padding(
         padding: const EdgeInsets.only(bottom: 10, top: 5),

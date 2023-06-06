@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_kelompok_mobile/pages/addPart.dart';
 import 'package:provider/provider.dart';
 import '../providers/storyAdd.dart';
 
@@ -65,6 +64,7 @@ class EditStory extends StatelessWidget {
                   ringkasanController.text,
                   imageController.text,
                   partController.text,
+                  kategoriController.text,
                   contentController.text);
               Navigator.pop(context);
             },
@@ -128,6 +128,7 @@ class EditStory extends StatelessWidget {
                               ringkasanController.text,
                               imageController.text,
                               partController.text,
+                              kategoriController.text,
                               contentController.text);
                       Navigator.pop(context);
                     },

@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:project_kelompok_mobile/widgets/category.dart';
 import '../models/story_model.dart';
 
 class StoryLists with ChangeNotifier {
@@ -67,7 +66,7 @@ class StoryLists with ChangeNotifier {
   }
 
   void editStoryList(String id, String title, String description, String image,
-      String part, String content) async {
+      String part, String categories, String content) async {
     Uri url = Uri.parse(
         "https://readme-cfafc-default-rtdb.firebaseio.com/StoryLists/$id.json");
 
@@ -78,6 +77,7 @@ class StoryLists with ChangeNotifier {
           "title": title,
           "description": description,
           "imageUrl": image,
+          "categories": categories,
           "part": part,
           "content": content
         },
@@ -88,6 +88,7 @@ class StoryLists with ChangeNotifier {
         _allStoryList.firstWhere((element) => element.id == id);
     selectStoryList.title = title;
     selectStoryList.description = description;
+    selectStoryList.categories = categories;
     selectStoryList.imageUrl = image;
     notifyListeners();
   }

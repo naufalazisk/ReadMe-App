@@ -18,12 +18,15 @@ class Detail extends StatelessWidget {
             context,
             MaterialPageRoute(
                 builder: (context) => TitlePage(
-                    data.id,
-                    data.title,
-                    data.description,
-                    data.writer,
-                    data.categories,
-                    data.imageUrl)));
+                      data.id,
+                      data.title,
+                      data.description,
+                      data.writer,
+                      data.categories,
+                      data.imageUrl,
+                      data.content,
+                      data.part,
+                    )));
       },
       child: Padding(
         padding: const EdgeInsets.only(right: 10),

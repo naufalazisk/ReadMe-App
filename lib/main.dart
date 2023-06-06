@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/navbar.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-
 import '../providers/storyAdd.dart';
 import '../pages/signIn.dart';
 import '../pages/signUp.dart';

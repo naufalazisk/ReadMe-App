@@ -5,6 +5,10 @@ import '../models/user.dart';
 
 class Authentication with ChangeNotifier {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
+  String displayName = "";
+  String email = "";
+  String imageUrl = "";
+  String uid = "";
 
   UserAttributes? _userFromFirebase(auth.User? user) {
     if (user == null) {
@@ -23,6 +27,7 @@ class Authentication with ChangeNotifier {
   ) async {
     final credential = await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
+    getUserDetail();
     return _userFromFirebase(credential.user);
   }
 
@@ -33,7 +38,22 @@ class Authentication with ChangeNotifier {
   ) async {
     final credential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
+    getUserDetail();
     return _userFromFirebase(credential.user);
+  }
+
+  Future<void> updateUserData(
+      String name, String email, String imageUrl) async {
+    _firebaseAuth.currentUser!.updateDisplayName(name);
+    _firebaseAuth.currentUser!.updateEmail(email);
+    _firebaseAuth.currentUser!.updatePhotoURL(imageUrl);
+  }
+
+  Future<void> getUserDetail() async {
+    displayName = await _firebaseAuth.currentUser!.displayName ?? "NN";
+    imageUrl = await _firebaseAuth.currentUser!.photoURL ?? "NN";
+    email = await _firebaseAuth.currentUser!.email ?? "NN";
+    notifyListeners();
   }
 
   Future<void> signOut() async {

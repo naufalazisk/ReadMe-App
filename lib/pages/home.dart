@@ -7,8 +7,20 @@ import '../widgets/poster.dart';
 import '../widgets/trending.dart';
 import '../widgets/detail.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    Provider.of<StoryLists>(context, listen: false).initialData();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final realData = Provider.of<StoryLists>(context);

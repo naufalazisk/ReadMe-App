@@ -8,7 +8,8 @@ class onSearch extends StatelessWidget {
         toolbarHeight: 50,
         elevation: 2,
         backgroundColor: const Color(0xffD6C9C9),
-        title: Center(
+        title: Padding(
+          padding: EdgeInsets.fromLTRB(90, 20, 0, 10),
           child: Text(
             "Search",
             style: TextStyle(

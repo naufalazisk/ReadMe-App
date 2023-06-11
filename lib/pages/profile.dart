@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/providers/authentication.dart';
+import 'package:provider/provider.dart';
 import '../pages/setting.dart';
 
 import 'editList.dart';
@@ -10,20 +12,15 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   // User profile data
-  String name = "Name";
-  String email = "email@example.com";
   String userDescription =
       "I spend my days crafting compelling content for a variety of clients, ranging from blog posts and articles to social media posts and marketing copy.";
 
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController usernameController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController userDescriptionController =
-      TextEditingController();
-  final TextEditingController imageController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
+    var data = Provider.of<Authentication>(context);
+    String name = data.displayName;
+    String picture = data.imageUrl;
+    String email = data.email;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xffD6C9C9),
@@ -73,8 +70,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   CircleAvatar(
                     radius: 50,
                     backgroundColor: Colors.grey[300],
-                    backgroundImage: const NetworkImage(
-                      "https://picsum.photos/id/237/200/300",
+                    backgroundImage: NetworkImage(
+                      picture,
                     ),
                   ),
                   const SizedBox(height: 16),

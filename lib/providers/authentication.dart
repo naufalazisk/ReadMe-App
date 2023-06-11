@@ -47,6 +47,12 @@ class Authentication with ChangeNotifier {
     _firebaseAuth.currentUser!.updateDisplayName(name);
     _firebaseAuth.currentUser!.updateEmail(email);
     _firebaseAuth.currentUser!.updatePhotoURL(imageUrl);
+    _firebaseAuth.currentUser!.reload();
+    displayName = name;
+    imageUrl = imageUrl;
+    email = email;
+
+    notifyListeners();
   }
 
   Future<void> getUserDetail() async {

@@ -69,13 +69,17 @@ class StoryPage extends StatelessWidget {
             indent: 10,
             endIndent: 10,
           ),
-          Text(
-            content,
-            style: const TextStyle(
-                color: Colors.black,
-                fontSize: 20,
-                fontFamily: "Monserrat",
-                fontWeight: FontWeight.w500),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Text(
+              content,
+              style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 15,
+                  fontFamily: "Monserrat",
+                  fontWeight: FontWeight.w400),
+              textAlign: TextAlign.left,
+            ),
           )
         ],
       ),

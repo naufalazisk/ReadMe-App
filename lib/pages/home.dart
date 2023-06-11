@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_kelompok_mobile/providers/authentication.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/storyAdd.dart';
@@ -23,6 +24,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final userData = Provider.of<Authentication>(context).imageUrl;
     final realData = Provider.of<StoryLists>(context);
     final realDataMain = realData.allStoryList;
 
@@ -54,10 +56,9 @@ class _HomeState extends State<Home> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => ProfilePage()));
                   },
-                  child: const CircleAvatar(
+                  child: CircleAvatar(
                     radius: 20,
-                    backgroundImage:
-                        NetworkImage("https://picsum.photos/130/130"),
+                    backgroundImage: NetworkImage(userData),
                   ),
                 ),
               ),

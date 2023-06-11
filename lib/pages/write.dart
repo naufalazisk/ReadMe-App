@@ -1,8 +1,10 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:project_kelompok_mobile/pages/editList.dart';
+import 'package:provider/provider.dart';
 
 import '../pages/profile.dart';
+import '../providers/authentication.dart';
 import 'addStory.dart';
 
 class write extends StatelessWidget {
@@ -11,6 +13,7 @@ class write extends StatelessWidget {
   write({super.key});
   @override
   Widget build(BuildContext context) {
+    final userData = Provider.of<Authentication>(context).imageUrl;
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
@@ -41,10 +44,9 @@ class write extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => ProfilePage()));
                     },
-                    child: const CircleAvatar(
+                    child: CircleAvatar(
                       radius: 20,
-                      backgroundImage:
-                          NetworkImage("https://picsum.photos/130/130"),
+                      backgroundImage: NetworkImage(userData),
                     ),
                   ),
                 ),

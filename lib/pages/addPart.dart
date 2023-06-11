@@ -71,13 +71,13 @@ class AddPart extends StatelessWidget {
                 autocorrect: false,
                 autofocus: true,
                 decoration: const InputDecoration(labelText: "Part"),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.newline,
                 controller: partController,
               ),
-              TextFormField(
+              TextField(
                 autocorrect: false,
                 decoration: const InputDecoration(labelText: "Content"),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.newline,
                 controller: contentController,
               ),
               const SizedBox(height: 50),

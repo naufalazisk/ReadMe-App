@@ -62,19 +62,19 @@ class AddStory extends StatelessWidget {
                 autocorrect: false,
                 autofocus: true,
                 decoration: const InputDecoration(labelText: "Nama Cerita"),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.newline,
                 controller: judulController,
               ),
-              TextFormField(
+              TextField(
                 autocorrect: false,
                 decoration: const InputDecoration(labelText: "Ringkasan"),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.newline,
                 controller: ringkasanController,
               ),
-              TextFormField(
+              TextField(
                 autocorrect: false,
                 decoration: const InputDecoration(labelText: "Kategori"),
-                textInputAction: TextInputAction.next,
+                textInputAction: TextInputAction.newline,
                 controller: kategoriController,
               ),
               TextFormField(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/authentication.dart';
+import 'edit_profile.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -38,7 +39,10 @@ class Setting extends StatelessWidget {
                 trailing: Icon(Icons.arrow_forward_ios,
                     color: Color.fromARGB(255, 194, 151, 151)),
               ),
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => EditProfile()));
+              }),
           // Navigator.push(
           //     context,
           //     MaterialPageRoute(

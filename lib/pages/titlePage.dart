@@ -155,64 +155,60 @@ class TitlePage extends StatelessWidget {
                   ],
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 20),
-                    child: SizedBox(
-                      height: 60,
-                      width: 200,
-                      child: FittedBox(
-                        child: FloatingActionButton(
-                          backgroundColor:
-                              const Color.fromARGB(255, 220, 182, 195),
-                          shape: BeveledRectangleBorder(
-                              borderRadius: BorderRadius.circular(5)),
-                          child: const Text(
-                            "Start Reading",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontFamily: "Monserrat",
-                                fontWeight: FontWeight.w500),
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => StoryPage(
-                                          title: title,
-                                          part: part,
-                                          content: content,
-                                        )));
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 20, left: 10),
-                    child: SizedBox(
-                      height: 60,
-                      width: 50,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            Provider.of<Favorites>(context, listen: false)
-                                .addFavs(id, title, description, writer,
-                                    category, image);
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: const Color.fromARGB(255, 220, 182, 195),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(5)),
-                              padding: const EdgeInsets.all(10)),
-                          child: const Icon(Icons.add)),
-                    ),
-                  )
-                ],
-              )
             ],
           ),
         ),
+      ),
+      floatingActionButton: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 40, bottom: 50),
+            child: SizedBox(
+              height: 50,
+              width: 300,
+              child: FloatingActionButton(
+                backgroundColor: const Color.fromARGB(255, 220, 182, 195),
+                shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)),
+                child: const Text(
+                  "Start Reading",
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontFamily: "Monserrat",
+                      fontWeight: FontWeight.w500),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => StoryPage(
+                                title: title,
+                                part: part,
+                                content: content,
+                              )));
+                },
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 15, bottom: 50),
+            child: SizedBox(
+              height: 50,
+              width: 50,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Provider.of<Favorites>(context, listen: false).addFavs(
+                        id, title, description, writer, category, image);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color.fromARGB(255, 220, 182, 195),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)),
+                      padding: const EdgeInsets.all(10)),
+                  child: const Icon(Icons.add)),
+            ),
+          )
+        ],
       ),
     );
   }

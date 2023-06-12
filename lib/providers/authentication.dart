@@ -56,6 +56,7 @@ class Authentication with ChangeNotifier {
   }
 
   Future<void> getUserDetail() async {
+    uid = await _firebaseAuth.currentUser!.uid;
     displayName = await _firebaseAuth.currentUser!.displayName ?? "NN";
     imageUrl = await _firebaseAuth.currentUser!.photoURL ?? "NN";
     email = await _firebaseAuth.currentUser!.email ?? "NN";

@@ -22,13 +22,13 @@ class _EditListState extends State<EditList> {
   // }
   @override
   void initState() {
-    Provider.of<StoryLists>(context, listen: false).initialData();
+    Provider.of<StoryLists>(context, listen: false).userStory();
   }
 
   @override
   Widget build(BuildContext context) {
     final data = Provider.of<StoryLists>(context);
-    final dataMain = data.allStoryList;
+    final dataMain = data.userStoryList;
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -62,39 +62,21 @@ class _EditListState extends State<EditList> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Flexible(
-              child: ListView(
-                scrollDirection: Axis.vertical,
-                children: [
-                  // const Padding(
-                  //   padding: EdgeInsets.only(bottom: 10, top: 20),
-                  //   child: Text("All Stories",
-                  //       style: TextStyle(
-                  //           color: Colors.black,
-                  //           fontSize: 15,
-                  //           fontWeight: FontWeight.bold,
-                  //           fontFamily: "Montserrat")),
-                  // ),
-                  SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.8,
-                    child: (dataMain.length == 0)
-                        ? const Center(
-                            child: Text(
-                              "No Story Added",
-                              style: TextStyle(
-                                  fontSize: 15, fontFamily: "Monserrat"),
-                            ),
-                          )
-                        : ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            itemBuilder: (context, index) =>
-                                ChangeNotifierProvider.value(
-                                    value: dataMain[index],
-                                    child: EditWidget(index: index)),
-                            itemCount: dataMain.length,
-                          ),
-                  )
-                ],
-              ),
+              child: (dataMain.length == 0)
+                  ? const Center(
+                      child: Text(
+                        "No Story Added",
+                        style: TextStyle(fontSize: 15, fontFamily: "Monserrat"),
+                      ),
+                    )
+                  : ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemBuilder: (context, index) =>
+                          ChangeNotifierProvider.value(
+                              value: dataMain[index],
+                              child: EditWidget(index: index)),
+                      itemCount: dataMain.length,
+                    ),
             )
           ],
         ),

@@ -23,7 +23,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => Authentication()),
-        ChangeNotifierProvider(create: (context) => StoryLists()),
+        ChangeNotifierProxyProvider<Authentication, StoryLists>(
+            create: (context) => StoryLists(),
+            update: (context, authentication, storylists) => storylists!
+              ..updateData(authentication.uid, authentication.displayName)),
+        //ChangeNotifierProvider(create: (context) => StoryLists()),
         ChangeNotifierProvider(create: (context) => Favorites())
       ],
       child: MaterialApp(
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
         // ),
         initialRoute: '/',
         routes: {
-          '/': (context) => Wrapper(),
+          '/': (context) => const Wrapper(),
           '/login': (context) => signIn(),
           '/register': (context) => signUp(),
           '/home': (context) => navbar(),

@@ -105,7 +105,7 @@ class EditStory extends StatelessWidget {
                 TextFormField(
                   autocorrect: false,
                   decoration: const InputDecoration(labelText: "Content"),
-                  textInputAction: TextInputAction.next,
+                  maxLines: null,
                   controller: contentController,
                 ),
                 TextFormField(

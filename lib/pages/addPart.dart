@@ -77,7 +77,7 @@ class AddPart extends StatelessWidget {
               TextField(
                 autocorrect: false,
                 decoration: const InputDecoration(labelText: "Content"),
-                textInputAction: TextInputAction.newline,
+                maxLines: null,
                 controller: contentController,
               ),
               const SizedBox(height: 50),

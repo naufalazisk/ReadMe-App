@@ -53,72 +53,74 @@ class AddStory extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          child: Column(
-            children: [
-              TextFormField(
-                autocorrect: false,
-                autofocus: true,
-                decoration: const InputDecoration(labelText: "Nama Cerita"),
-                textInputAction: TextInputAction.newline,
-                controller: judulController,
-              ),
-              TextField(
-                autocorrect: false,
-                decoration: const InputDecoration(labelText: "Ringkasan"),
-                textInputAction: TextInputAction.newline,
-                controller: ringkasanController,
-              ),
-              TextField(
-                autocorrect: false,
-                decoration: const InputDecoration(labelText: "Kategori"),
-                textInputAction: TextInputAction.newline,
-                controller: kategoriController,
-              ),
-              TextFormField(
-                autocorrect: false,
-                decoration: const InputDecoration(labelText: "Image URL"),
-                textInputAction: TextInputAction.done,
-                controller: imageController,
-                onEditingComplete: () {
-                  AddPart(
-                    judulController.text,
-                    ringkasanController.text,
-                    kategoriController.text,
-                    imageController.text,
-                  );
-                  Navigator.pop(context);
-                },
-              ),
-              const SizedBox(height: 50),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.centerRight,
-                child: OutlinedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AddPart(
-                          judulController.text,
-                          ringkasanController.text,
-                          kategoriController.text,
-                          imageController.text,
-                        ),
-                      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Form(
+            child: Column(
+              children: [
+                TextFormField(
+                  autocorrect: false,
+                  autofocus: true,
+                  decoration: const InputDecoration(labelText: "Nama Cerita"),
+                  textInputAction: TextInputAction.newline,
+                  controller: judulController,
+                ),
+                TextField(
+                  autocorrect: false,
+                  decoration: const InputDecoration(labelText: "Ringkasan"),
+                  maxLines: null,
+                  controller: ringkasanController,
+                ),
+                TextField(
+                  autocorrect: false,
+                  decoration: const InputDecoration(labelText: "Kategori"),
+                  textInputAction: TextInputAction.newline,
+                  controller: kategoriController,
+                ),
+                TextFormField(
+                  autocorrect: false,
+                  decoration: const InputDecoration(labelText: "Image URL"),
+                  textInputAction: TextInputAction.done,
+                  controller: imageController,
+                  onEditingComplete: () {
+                    AddPart(
+                      judulController.text,
+                      ringkasanController.text,
+                      kategoriController.text,
+                      imageController.text,
                     );
+                    Navigator.pop(context);
                   },
-                  child: const Text(
-                    "Continue",
-                    style: TextStyle(
-                      fontSize: 18,
+                ),
+                const SizedBox(height: 50),
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.centerRight,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => AddPart(
+                            judulController.text,
+                            ringkasanController.text,
+                            kategoriController.text,
+                            imageController.text,
+                          ),
+                        ),
+                      );
+                    },
+                    child: const Text(
+                      "Continue",
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -54,6 +54,7 @@ class TitlePage extends StatelessWidget {
             ),
           )),
       body: SingleChildScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.all(15.0),
           child: Column(

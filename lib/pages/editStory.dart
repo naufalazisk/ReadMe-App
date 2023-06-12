@@ -87,7 +87,7 @@ class EditStory extends StatelessWidget {
                 TextFormField(
                   autocorrect: false,
                   decoration: const InputDecoration(labelText: "Ringkasan"),
-                  textInputAction: TextInputAction.next,
+                  maxLines: null,
                   controller: ringkasanController,
                 ),
                 TextFormField(

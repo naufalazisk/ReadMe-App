@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         // theme: ThemeData(
         //   primarySwatch: Colors.purple,
-        // ),
+        // ),naufal
         initialRoute: '/',
         routes: {
           '/': (context) => const Wrapper(),

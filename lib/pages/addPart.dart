@@ -62,50 +62,52 @@ class AddPart extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Form(
-          child: Column(
-            children: [
-              TextFormField(
-                autocorrect: false,
-                autofocus: true,
-                decoration: const InputDecoration(labelText: "Part"),
-                textInputAction: TextInputAction.newline,
-                controller: partController,
-              ),
-              TextField(
-                autocorrect: false,
-                decoration: const InputDecoration(labelText: "Content"),
-                maxLines: null,
-                controller: contentController,
-              ),
-              const SizedBox(height: 50),
-              Container(
-                width: double.infinity,
-                alignment: Alignment.centerRight,
-                child: OutlinedButton(
-                  onPressed: () {
-                    stories.addStoryList(
-                      title,
-                      description,
-                      categories,
-                      image,
-                      partController.text,
-                      contentController.text,
-                    );
-                    int count = 0;
-                    Navigator.of(context).popUntil((_) => count++ >= 2);
-                  },
-                  child: const Text(
-                    "Submit",
-                    style: TextStyle(
-                      fontSize: 18,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Form(
+            child: Column(
+              children: [
+                TextFormField(
+                  autocorrect: false,
+                  autofocus: true,
+                  decoration: const InputDecoration(labelText: "Part"),
+                  textInputAction: TextInputAction.newline,
+                  controller: partController,
+                ),
+                TextField(
+                  autocorrect: false,
+                  decoration: const InputDecoration(labelText: "Content"),
+                  maxLines: null,
+                  controller: contentController,
+                ),
+                const SizedBox(height: 50),
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.centerRight,
+                  child: OutlinedButton(
+                    onPressed: () {
+                      stories.addStoryList(
+                        title,
+                        description,
+                        categories,
+                        image,
+                        partController.text,
+                        contentController.text,
+                      );
+                      int count = 0;
+                      Navigator.of(context).popUntil((_) => count++ >= 2);
+                    },
+                    child: const Text(
+                      "Submit",
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
